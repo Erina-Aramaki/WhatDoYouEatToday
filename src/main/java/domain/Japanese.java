@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Japanese {
+	private int num;
 	private int id;
 	private String name;
+	private int stapleId;
 }

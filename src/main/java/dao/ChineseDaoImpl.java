@@ -47,7 +47,7 @@ public class ChineseDaoImpl implements ChineseDao{
 	}
 	
 	@Override
-	public Chinese stapleFood(String strId) throws Exception {
+	public Chinese select(String strId) throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
 //			String sql = "SELECT chinese_food.id, chinese_food.name, chinese_food.staple_id, "
@@ -67,22 +67,24 @@ public class ChineseDaoImpl implements ChineseDao{
 			ResultSet rs = stmt.executeQuery();
 			System.out.println("ChineseDaoImpl：rs = " + rs);
 			//変換
+			System.out.println("-------------------------------------------------------------------");
 			while(rs.next()) {
 				Chinese chineseFood = mapToFood(rs);
 				System.out.println("ChineseDaoImpl："+ chineseFood);
 				this.chineseFood = chineseFood;
 				chineseFoods.add(chineseFood);
 			}
+			System.out.println("-------------------------------------------------------------------");
 			
 			//ランダム関数
 //			int max = Collections.max(num.get(0));
-			System.out.println("chineseFood.getNum()=" + chineseFood.getNum());
+			System.out.println("ChineseDaoImpl：ランダム数（getNum()）=" + chineseFood.getNum());
 			Random r = new Random();
 //			int random = r.nextInt(chineseFoods.size())+1;
 //			System.out.println("chineseDaoImple：chineseFoods.size()=" + chineseFoods.size()+1);
-			int random = r.nextInt(chineseFood.getNum())+1;
+			int random = r.nextInt(chineseFood.getNum())+1; //0～4→1～5に変更
 			int num = random;
-			System.out.println("stapleFood（ランダム）ID：" + num);
+			System.out.println("stapleFood（ランダム結果）num：" + num);
 			
 			
 			String sql2 = "SELECT staple_chinese.* "
@@ -118,7 +120,7 @@ public class ChineseDaoImpl implements ChineseDao{
 
 	//後ほど実装：詳細を表示させる？？
 	@Override
-	public List<Chinese> select() throws Exception {
+	public List<Chinese> detail() throws Exception {
 
 		Random r = new Random();
 		int random = r.nextInt(2)+1;

@@ -26,6 +26,11 @@ public class DaoFactory {
 		return new ChineseDaoImpl(getDataSource());
 	}
 	
+	public static WesternDao createWesternDao() {
+		//DB接続
+		return new WesternDaoImpl(getDataSource());
+	}
+	
 	//DB接続のメソッド
 	private static DataSource getDataSource() {
 		InitialContext ctx = null;

@@ -44,6 +44,12 @@ public class FoodServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+			String strId = request.getParameter("num");
+			System.out.println("strId=" + strId);
+			int id = (int)Integer.parseInt(strId);
+			System.out.println("id=" + id);
+			
+			request.getRequestDispatcher("/WEB-INF/view/foodDetail"+ id +".jsp").forward(request, response);
 		
 	}
 

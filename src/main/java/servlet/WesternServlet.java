@@ -8,23 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ChineseDao;
 import dao.DaoFactory;
-import domain.Chinese;
+import dao.WesternDao;
+import domain.Western;
 
 /**
- * Servlet implementation class ChineseServlet
+ * Servlet implementation class WesternServlet
  */
-@WebServlet("/admin/chinese")
-public class ChineseServlet extends HttpServlet {
+@WebServlet("/admin/western")
+public class WesternServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.getRequestDispatcher("/WEB-INF/view/chinese.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/western.jsp").forward(request, response);
 	}
 
 	/**
@@ -57,17 +56,15 @@ public class ChineseServlet extends HttpServlet {
 		}
 
 		try {
-			ChineseDao dao = DaoFactory.createChineseDao();
-			Chinese stapleChinese = dao.select(strId);
-			System.out.println("ChineseServlet：stapleChinese=" + stapleChinese);
-			request.setAttribute("stapleChinese", stapleChinese);
-			request.getRequestDispatcher("/WEB-INF/view/chineseResult.jsp").forward(request, response);
+			WesternDao dao = DaoFactory.createWesternDao();
+			Western stapleWestern = dao.select(strId);
+			System.out.println("WesternServlet：stapleWestern=" + stapleWestern);
+			request.setAttribute("stapleWestern", stapleWestern);
+			request.getRequestDispatcher("/WEB-INF/view/westernResult.jsp").forward(request, response);
 		} catch (Exception e) {
-			System.out.println("ChineseServlet：失敗");
+			System.out.println("WesternServlet：失敗");
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 }

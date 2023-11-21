@@ -8,10 +8,23 @@
 <title>料理一覧</title>
 </head>
 <body>
-	<h1>料理一覧</h1>
-	<c:forEach items="${foods}" var="food" varStatus="vs">
-		<p><c:out value="${food.name}" /></p>
-	</c:forEach>
+	<h1>すべての料理♪</h1>
+		<table border="1">
+			<tr><th>料理一覧</th></tr>
+			<c:forEach items="${foods}" var="food" varStatus="vs">
+				<tr><td>
+					<%-- <a href=""><c:out value="${food.num}" /></a> --%>
+<%-- 					<a href="<c:out value="food?num=${food.num}" />"><c:out value="${food.name}" /></a> --%>
+					<form action="" method="post">
+						<c:out value="${food.num}" />
+
+						<input type="hidden" value="<c:out value="${food.num}" />" name="num" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
+						<input type="submit" value="<c:out value="${food.name}" />" name="name" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
+					</form>
+				</td></tr>
+			</c:forEach>
+		</table>
+	
 	
 	<p><a href="select">今日なに食べる？トップへ戻る</a></p>
 	<p><a href="mypage">マイページへ戻る</a></p>

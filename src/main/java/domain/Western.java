@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Food {
-	
+public class Western {
+
 	private int num;
 	private int id;
 	private String name;
 	private int stapleId;
-
+	
 }

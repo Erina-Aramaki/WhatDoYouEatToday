@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,29 +23,63 @@ public class JapaneseServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		JapaneseDao dao = DaoFactory.createJapaneseDao();
 		
-		try {
-			List<Japanese> japanese = dao.select();
-			
-			System.out.println("japaneseServlet"+japanese.get(0));
-			
-			request.setAttribute("japanese", japanese);
-
-			
 		request.getRequestDispatcher("/WEB-INF/view/japanese.jsp").forward(request, response);
 		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		JapaneseDao dao = DaoFactory.createJapaneseDao();
+//		try {
+//			List<Japanese> japanese = dao.select();
+//			
+//			System.out.println("japaneseServlet"+japanese.get(0));
+//			
+//			request.setAttribute("japanese", japanese);
+//
+//			
+//		request.getRequestDispatcher("/WEB-INF/view/japanese.jsp").forward(request, response);
+//		
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String strId1 = request.getParameter("1");
+		String strId2 = request.getParameter("2");
+		String strId3 = request.getParameter("3");
+		String strId4 = request.getParameter("4");
+		String strId5 = request.getParameter("5");
+		
+		String strId = null;
+		
+		if(strId1 != null) {
+			strId = strId1;
+		} 
+		if(strId2 != null){
+			strId = strId2;
+		} 
+		if(strId3 != null){
+			strId = strId3;
+		}
+		if(strId4 != null){
+			strId = strId4;
+		} 
+		if(strId5 != null){
+			strId = strId5;
+		}
+
+		try {
+			JapaneseDao dao = DaoFactory.createJapaneseDao();
+			Japanese stapleJapanese = dao.select(strId);
+			System.out.println("JapaneseServlet：stapleJapanese=" + stapleJapanese);
+			request.setAttribute("stapleJapanese", stapleJapanese);
+			request.getRequestDispatcher("/WEB-INF/view/japaneseResult.jsp").forward(request, response);
+		} catch (Exception e) {
+			System.out.println("JapaneseServlet：失敗");
+			e.printStackTrace();
+		}
 	}
 
 }

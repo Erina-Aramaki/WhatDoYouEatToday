@@ -10,8 +10,8 @@ public interface ChineseDao {
 	List<Chinese> findAll() throws Exception;
 	
 	//主食を選択
-	Chinese stapleFood(String strId) throws Exception;
+	Chinese select(String strId) throws Exception;
 			
 	//selectしたfoodを取得　→　詳細を表示させる？？
-	List<Chinese> select() throws Exception;
+	List<Chinese> detail() throws Exception;
 }

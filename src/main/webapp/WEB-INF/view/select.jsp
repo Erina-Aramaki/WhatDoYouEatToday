@@ -11,9 +11,9 @@
 	<h1>今日なに食べる？</h1>
 	<p>今日のご飯を決めるお手伝いをするよ！</p>
 	<p>食べたいものを選択してね！</p>
-	<a href="japanese"><input type="submit" value="和食" /></a>
-	<a href="italian"><input type="submit" value="イタリアン" /></a>
-	<a href="chinese"><input type="submit" value="中華" /></a>
+	<a href="japanese"><input type="submit" value="和食料理" /></a>
+	<a href="chinese"><input type="submit" value="中華料理" /></a>
+	<a href="western"><input type="submit" value="西洋料理" /></a>
 	
 	<p>料理一覧は<a href="food">こちら</a></p>
 	

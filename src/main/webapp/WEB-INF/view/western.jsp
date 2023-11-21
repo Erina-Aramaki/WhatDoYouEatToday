@@ -5,10 +5,10 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>和食のオススメ料理</title>
+<title>西洋のオススメ料理</title>
 </head>
 <body>
-	<h1>和食のオススメ料理</h1>
+	<h1>西洋のオススメ料理</h1>
 	<p>食べたいものを選択してね！</p>
 	
 	<form action="" method="post">
