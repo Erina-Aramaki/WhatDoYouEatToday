@@ -116,6 +116,7 @@ public class ChineseDaoImpl implements ChineseDao{
 		return null;
 	}
 
+	//後ほど実装：詳細を表示させる？？
 	@Override
 	public List<Chinese> select() throws Exception {
 
