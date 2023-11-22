@@ -34,9 +34,8 @@
 - サイトデザイン（HTML、CSS、JavaScript）
 
 ## 苦労した点
-MySQLに慣れていないこともあり、SQL文の作成に苦戦しました。
-このアプリでは、5つのテーブルを作成しており、そのうち4つのテーブルを機能に合わせて結合しています。
-使用例は以下の通りです。
+MySQLに慣れていないこともあり、SQL文の作成に苦戦しました。     
+作成例は以下の通りです。
 
 1. SQLで複数の検索結果を結合し、１つの結果として取得するために、「UNION」を使用
 SELECT japanese_food.name AS japanese_name FROM japanese_food
