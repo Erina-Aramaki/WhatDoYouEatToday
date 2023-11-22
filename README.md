@@ -11,6 +11,25 @@
 ## URL
 レンタルサーバーの契約が完了次第、記載します。
 
+## 作成ページ
+- 会員ページ     
+![会員ページ](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/c0b5e2b9-0c7b-4e9c-8f90-15d5e59272b1)
+
+- 診断ページ   
+![select](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/7e89609c-0c81-45d9-be22-74dd16abd867)
+
+- 「和食料理」をクリック   
+![Japanese](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/39bcbd4d-ca57-4008-bbd3-0a211bed2df0)
+
+- 「米」をクリック
+![Japanese](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/ac0e1622-a4ac-4ecc-93e0-cedd521071ac)
+
+- 診断結果
+![診断結果](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/31b761a3-5a42-4eab-a110-8dd466ac8362)
+
+![診断結果2](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/93983390-dca6-4311-9809-3893c209db7e)
+
+
 ## 使用技術        
 - Java    
 - MySQL      
@@ -24,7 +43,7 @@
 - ログアウト機能    
 - 診断機能    
 - 商品一覧表示機能    
-- ユーザー詳細表示機能    
+- ユーザー詳細表示機能
 
 
 ## 今後実装予定    
