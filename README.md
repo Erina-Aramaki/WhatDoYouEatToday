@@ -9,10 +9,7 @@
 
 ## 使用技術        
 - Java    
-- MySQL    
-- HTML    
-- CSS    
-- jquery    
+- MySQL      
 - MySQL    
 
 
@@ -29,7 +26,8 @@
 - ユーザー情報更新機能    
 - ユーザー情報削除機能    
 - API（レシピ検索、お店検索）    
-- お気に入り機能    
+- お気に入り機能
+- サイトデザイン（HTML、CSS、JavaScript）
 
 
 
