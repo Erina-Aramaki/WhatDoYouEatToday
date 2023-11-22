@@ -10,22 +10,8 @@
 
 ## 制作状況
 2023年11月14日 製作開始。   
-2023年11月22日 README作成。    
-
-## 制作ページ
-- 会員ページ     
-![会員ページ](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/c0b5e2b9-0c7b-4e9c-8f90-15d5e59272b1)
-
-- 診断ページ   
-（例）「和食料理」をクリック    
-![select](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/7e89609c-0c81-45d9-be22-74dd16abd867)
-
-- 「米」をクリック   
-![Japanese](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/39bcbd4d-ca57-4008-bbd3-0a211bed2df0)
-
-- 診断結果  
-![診断結果2](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/93983390-dca6-4311-9809-3893c209db7e)
-
+2023年11月22日 README作成。
+公開予定日
 
 ## 使用技術        
 - Java    
