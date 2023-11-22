@@ -21,10 +21,10 @@
 - 「和食料理」をクリック   
 ![Japanese](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/39bcbd4d-ca57-4008-bbd3-0a211bed2df0)
 
-- 「米」をクリック
+- 「米」をクリック  
 ![Japanese](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/ac0e1622-a4ac-4ecc-93e0-cedd521071ac)
 
-- 診断結果
+- 診断結果  
 ![診断結果](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/31b761a3-5a42-4eab-a110-8dd466ac8362)
 
 ![診断結果2](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/93983390-dca6-4311-9809-3893c209db7e)
