@@ -39,22 +39,12 @@ public class ChineseServlet extends HttpServlet {
 		String strId5 = request.getParameter("5");
 		
 		String strId = null;
+		if(strId1 != null) strId = strId1;
+		if(strId2 != null) strId = strId2;
+		if(strId3 != null) strId = strId3;
+		if(strId4 != null) strId = strId4;
+		if(strId5 != null) strId = strId5;
 		
-		if(strId1 != null) {
-			strId = strId1;
-		} 
-		if(strId2 != null){
-			strId = strId2;
-		} 
-		if(strId3 != null){
-			strId = strId3;
-		}
-		if(strId4 != null){
-			strId = strId4;
-		} 
-		if(strId5 != null){
-			strId = strId5;
-		}
 
 		try {
 			ChineseDao dao = DaoFactory.createChineseDao();
