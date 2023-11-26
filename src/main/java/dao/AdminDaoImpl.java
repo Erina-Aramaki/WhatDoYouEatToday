@@ -77,6 +77,15 @@ public class AdminDaoImpl implements AdminDao{
 		}
 		
 	}
+	
+	@Override
+	public void update(Admin admin) throws Exception {
+		//SQL文
+		String sql = "UPDATE admin SET "
+				+ " login_id = ?, login_pass = ?, email, name = ?"
+				+ " WHERE id = ?";
+		
+	}
 
 	@Override
 	public Admin findByLoginIdAndLoginPass(String loginId, String loginPass) throws Exception {
@@ -112,5 +121,7 @@ public class AdminDaoImpl implements AdminDao{
 				.build();
 		return admin;
 	}
+
+	
 
 }

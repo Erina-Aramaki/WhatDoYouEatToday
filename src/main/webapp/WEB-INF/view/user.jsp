@@ -20,7 +20,7 @@
 		<tr><td><c:out value="${email}" /></td></tr>
 	</table>
 	<a href="mypage"><input type="submit" value="マイページへ戻る" /></a>
-	<a href=""><input type="submit" value="会員情報を編集する" /></a>
+	<a href="editUser"><input type="submit" value="会員情報を編集する" /></a>
 
 </body>
 </html>

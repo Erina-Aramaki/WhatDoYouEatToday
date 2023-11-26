@@ -22,7 +22,8 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		session.invalidate();
+		session.invalidate(); //EditUserServletでセッションを使用するため、特定のセッションのみ削除するよう仕様変更する
+//		session.removeAttribute();
 		
 		request.getRequestDispatcher("/WEB-INF/view/logout.jsp").forward(request, response);
 	}

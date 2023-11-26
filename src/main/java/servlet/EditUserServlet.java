@@ -14,18 +14,23 @@ import dao.DaoFactory;
 import domain.Admin;
 
 /**
- * Servlet implementation class RegisterServlet
+ * Servlet implementation class EditUserServlet
  */
-@WebServlet("/register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/admin/editUser")
+public class EditUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(request, response);
+		
+		HttpSession session = request.getSession();
+		request.setAttribute("name", session.getAttribute("name"));
+		request.setAttribute("email", session.getAttribute("email"));
+		request.setAttribute("loginId", session.getAttribute("loginId"));
+		request.setAttribute("loginPass", session.getAttribute("loginPass"));
+		request.getRequestDispatcher("/WEB-INF/view/editUser.jsp").forward(request, response);
 	}
 
 	/**
@@ -33,38 +38,20 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//文字化け防止
-		request.setCharacterEncoding("UTF-8");
-		
 		String name = request.getParameter("name");
-		String email = request.getParameter("email");
 		String loginId = request.getParameter("loginId");
 		String loginPass = request.getParameter("loginPass");
+		String email = request.getParameter("email");
 		
-		System.out.println(name);
-		System.out.println(email);
-		System.out.println(loginId);
-		System.out.println(loginPass);
-		
-		//バリデーション
-		
-		//DB登録
 		try {
 			AdminDao dao = DaoFactory.createAdminDao();
-			dao.insert(new Admin(null, loginId, loginPass, email, name));
+			dao.update(new Admin(null, loginId, loginPass, email, name));
 		} catch (Exception e) {
-			System.out.println("RegisterServlet：DB登録失敗");
+			System.out.println("EditUserServlet：失敗");
 			e.printStackTrace();
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("name", name);
-		session.setAttribute("email", email);
-		session.setAttribute("loginId", loginId);
-		session.setAttribute("loginPass", loginPass);
-		
-		response.sendRedirect(request.getContextPath() + "/login");
-		return;
+		request.getRequestDispatcher("/WEB-INF/view/mypage.jsp").forward(request, response);
 	}
 
 }

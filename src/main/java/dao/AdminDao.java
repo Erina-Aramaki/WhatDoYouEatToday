@@ -12,7 +12,7 @@ public interface AdminDao {
 	
 	void insert(Admin admin) throws Exception;
 	
-//	void update(Admin admin) throws Exception; 時間があれば実装
+	void update(Admin admin) throws Exception;
 	
 //	void delete(Admin admin) throws Exception; 時間があれば実装
 	
