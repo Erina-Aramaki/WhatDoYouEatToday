@@ -23,13 +23,13 @@
 - ログイン機能    
 - ログアウト機能    
 - 診断機能    
-- 商品一覧表示機能    
+- レシピ一覧表示機能    
 - ユーザー詳細表示機能
 
 
 ## 今後実装予定    
 - ユーザー情報更新機能    
-- ユーザー情報削除機能    
+- レシピ削除機能    
 - API（レシピ検索、お店検索）    
 - お気に入り登録、削除、一覧表示機能
 - サイトデザイン（CSS、JavaScript）
@@ -38,7 +38,7 @@
 テーブル結合したものに「ROW_NUMBER()」で連番を付与を付与し、ランダム関数の結果と一致する番号のカラムを取得することに苦戦しました。   
 - 「WesternDaoImpl.java」の select(String strId) メソッド
 
-![苦戦したポイント](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/ab0c6f6d-98b5-4f0e-b661-9a92e2e4e561)
+![苦戦した点](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/a92f7a62-2198-4580-8223-9b87ba95a10c)
 
 ## ER図
 今後記載予定
