@@ -20,6 +20,7 @@ import domain.Admin;
 public class EditUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	private String loginId;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -30,6 +31,8 @@ public class EditUserServlet extends HttpServlet {
 		request.setAttribute("email", session.getAttribute("email"));
 		request.setAttribute("loginId", session.getAttribute("loginId"));
 		request.setAttribute("loginPass", session.getAttribute("loginPass"));
+		
+		loginId = (String) session.getAttribute("loginId");
 		request.getRequestDispatcher("/WEB-INF/view/editUser.jsp").forward(request, response);
 	}
 
@@ -39,13 +42,19 @@ public class EditUserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String name = request.getParameter("name");
-		String loginId = request.getParameter("loginId");
 		String loginPass = request.getParameter("loginPass");
 		String email = request.getParameter("email");
+		System.out.println("EditUserServlet：" + name +"," + loginId +"," + loginPass +"," + email);
 		
 		try {
 			AdminDao dao = DaoFactory.createAdminDao();
 			dao.update(new Admin(null, loginId, loginPass, email, name));
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("name", name);
+			session.setAttribute("email", email);
+			session.setAttribute("loginPass", loginPass); //BCrypt.hashpw、BCrypt.checkpwを確認する
+			
 		} catch (Exception e) {
 			System.out.println("EditUserServlet：失敗");
 			e.printStackTrace();

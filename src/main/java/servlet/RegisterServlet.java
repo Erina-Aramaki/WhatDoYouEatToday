@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.AdminDao;
 import dao.DaoFactory;
@@ -57,11 +56,11 @@ public class RegisterServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("name", name);
-		session.setAttribute("email", email);
-		session.setAttribute("loginId", loginId);
-		session.setAttribute("loginPass", loginPass);
+//		HttpSession session = request.getSession();
+//		session.setAttribute("name", name);
+//		session.setAttribute("email", email);
+//		session.setAttribute("loginId", loginId);
+//		session.setAttribute("loginPass", loginPass);
 		
 		response.sendRedirect(request.getContextPath() + "/login");
 		return;

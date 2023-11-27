@@ -80,11 +80,35 @@ public class AdminDaoImpl implements AdminDao{
 	
 	@Override
 	public void update(Admin admin) throws Exception {
-		//SQL文
-		String sql = "UPDATE admin SET "
-				+ " login_id = ?, login_pass = ?, email, name = ?"
-				+ " WHERE id = ?";
 		
+		try(Connection con = ds.getConnection()){
+			
+			//SQL文
+			String sql = "UPDATE admin SET "
+					+ " login_pass = ?, email = ?, name = ?"
+					+ " WHERE login_id = ?";
+			
+			//パスワードをハッシュ化
+			String loginPass = admin.getLoginPass(); //adminクラスのgetter
+			String hashed  = BCrypt.hashpw(loginPass, BCrypt.gensalt());
+			System.out.println(hashed);
+			
+			
+			//SQL文準備
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, hashed);
+			stmt.setString(2, admin.getEmail());
+			stmt.setString(3, admin.getName());
+			stmt.setString(4, admin.getLoginId());
+			
+			System.out.println("AdminDaoImpl：" + admin.getName() +"," + admin.getLoginPass() +"," + admin.getEmail() +"," + admin.getLoginId());
+			//SQL実行
+			stmt.executeUpdate();
+			//変換
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	@Override
@@ -104,7 +128,7 @@ public class AdminDaoImpl implements AdminDao{
 					return null;
 				}
 				System.out.println("AdminDaoImpl2："+rs.getString("name"));
-				return new Admin(rs.getInt("id"), loginId, null, rs.getString("email"), rs.getString("name"));
+				return new Admin(rs.getInt("id"), loginId, loginPass, rs.getString("email"), rs.getString("name"));
 			}
 		}
 		

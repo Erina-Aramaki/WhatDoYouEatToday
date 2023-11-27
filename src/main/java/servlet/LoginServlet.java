@@ -59,6 +59,12 @@ public class LoginServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		session.setAttribute("admin", admin);
+		
+		session.setAttribute("name", admin.getName());
+		session.setAttribute("loginId", admin.getLoginId());
+		session.setAttribute("loginPass", admin.getLoginPass());
+		session.setAttribute("email", admin.getEmail());
+		
 		response.sendRedirect(request.getContextPath() + "/admin/mypage");
 		return;
 	}

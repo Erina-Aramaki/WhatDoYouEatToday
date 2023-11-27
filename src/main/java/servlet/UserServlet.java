@@ -26,10 +26,10 @@ public class UserServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Admin admin = (Admin)session.getAttribute("admin");
 		
-		request.setAttribute("name", admin.getName());
-		request.setAttribute("loginId", admin.getLoginId());
-//		request.setAttribute("loginPass", admin.getLoginPass());
-		request.setAttribute("email", admin.getEmail());
+		request.setAttribute("name", session.getAttribute("name"));
+		request.setAttribute("loginId", session.getAttribute("loginId"));
+		request.setAttribute("loginPass", session.getAttribute("loginPass"));
+		request.setAttribute("email", session.getAttribute("email"));
 		
 		System.out.println("MyPageServlet1：" + admin.getName());
 		

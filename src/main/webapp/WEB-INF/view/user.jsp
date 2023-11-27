@@ -15,7 +15,7 @@
 		<tr><th>ログインID</th></tr>
 		<tr><td><c:out value="${loginId}" /></td></tr>
 		<tr><th>パスワード</th></tr>
-		<tr><td>●●●●●●●●</td></tr>
+		<tr><td><c:out value="${loginPass}" /></td></tr> <!-- 後ほど、パスワードを非表示にしログイン確認出来てからパスワードを表示する使用に変更する -->
 		<tr><th>メールアドレス</th></tr>
 		<tr><td><c:out value="${email}" /></td></tr>
 	</table>

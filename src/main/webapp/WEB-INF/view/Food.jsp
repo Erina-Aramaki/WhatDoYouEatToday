@@ -26,7 +26,7 @@
 		</table>
 	
 	
-	<p><a href="select">今日なに食べる？トップへ戻る</a></p>
 	<p><a href="mypage">マイページへ戻る</a></p>
+	<p><a href="select">今日なに食べる？トップへ戻る</a></p>
 </body>
 </html>

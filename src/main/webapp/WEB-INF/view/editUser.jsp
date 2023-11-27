@@ -6,18 +6,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<h1>会員情報を編集</h1>
+<title>会員情報</title>
+</head>
+<body>
+	<h1>会員情報を編集</h1>
 	<form action="" method="post">
 		<table border="1" style="border-collapse: collapse">
 			<tr><th>お名前</th></tr>
-			<%-- <tr><td><c:out value="${name}" /></td></tr> --%>
-			<tr><td><input type="text" value="<c:out value="${name}" />" /></td></tr>
-			<tr><th>ログインID</th></tr>
-			<tr><td><input type="text" value="<c:out value="${loginId}" />" /></td></tr>
+			<tr><td><input type="text" value="<c:out value="${name}" />" name="name" /></td></tr>
+			<tr><th>ログインID<small>※変更不可</small></th></tr>
+			<!-- 表示のみの入力フィールド disabled value -->
+			<tr><td><input type="text" name="loginId" disabled value="<c:out value="${loginId}" />" /></td></tr>
 			<tr><th>パスワード</th></tr>
-			<tr><td><input type="text" value="<c:out value="${loginPass}" />" /></td></tr>
+			<tr><td><input type="text" value="<c:out value="${loginPass}" />" name="loginPass" /></td></tr>
 			<tr><th>メールアドレス</th></tr>
-			<tr><td><input type="text" value="<c:out value="${email}" />" /></td></tr>
+			<tr><td><input type="text" value="<c:out value="${email}" />" name="email" /></td></tr>
 		</table>
 		<input type="submit" value="編集完了する" />
 	</form>
