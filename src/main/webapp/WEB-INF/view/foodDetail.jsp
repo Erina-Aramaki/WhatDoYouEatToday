@@ -10,7 +10,7 @@
 <body>
 	<%-- <c:forEach items="${foods}" var="food" varStatus="vs"> --%>
 		
-		<h1>${foodName }</h1>
+		<h1 class="page-title">${foodName }</h1>
 		
 		<!-- お気に入りボタン -->
 		<form action="" method="post">
