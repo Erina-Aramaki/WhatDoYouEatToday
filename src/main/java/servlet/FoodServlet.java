@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DaoFactory;
 import dao.FoodDao;
@@ -28,7 +29,10 @@ public class FoodServlet extends HttpServlet {
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			List<Food> foods = dao.findAll();
-			request.setAttribute("foods", foods);
+			
+//			request.setAttribute("foods", foods);
+			HttpSession session = request.getSession();
+			session.setAttribute("foods", foods);
 			System.out.println("FoodServlet："+ foods);
 			
 		} catch (Exception e) {
@@ -36,7 +40,7 @@ public class FoodServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		request.getRequestDispatcher("/WEB-INF/view/Food.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/food.jsp").forward(request, response);
 	}
 
 	/**
@@ -44,12 +48,7 @@ public class FoodServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-			String strId = request.getParameter("num");
-			System.out.println("strId=" + strId);
-			int id = (int)Integer.parseInt(strId);
-			System.out.println("id=" + id);
 			
-			request.getRequestDispatcher("/WEB-INF/view/foodDetail"+ id +".jsp").forward(request, response);
 		
 	}
 

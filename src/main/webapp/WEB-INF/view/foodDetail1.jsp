@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ja">
+<!-- foodDetail.jspに引き継いで、ループを回す -->
+
 <head>
 <meta charset="UTF-8">
 <title>かつ丼</title>
