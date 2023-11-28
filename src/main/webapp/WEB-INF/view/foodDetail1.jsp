@@ -9,8 +9,21 @@
 </head>
 <body>
 	<h1>かつ丼</h1>
-	<!-- お気に入り登録ボタン後ほど実装 -->
-	<img src="<%= request.getContextPath() %>/upload/1katsudon.jpg" width="412" alt="かつ丼の画像" />
+	
+	<!-- お気に入りボタン -->
+	<form action="" method="post">
+		<span class="favoritedmark fade">★</span>
+		<!-- <button class="btn btn-primary addtofavorite">お気に入りに登録</button> -->
+	    <!-- <button class="btn btn-primary removefavorite hidden">お気に入りから外す</button> -->
+<!-- 		<input type="submit" name="addtofavorite" class="btn btn-primary addtofavorite" value="お気に入りに登録"  />
+		<input type="submit" name="removefavorite" class="btn btn-primary removefavorite hidden" value="お気に入りから外す"  />
+ -->	    
+		<input type="submit" name="addtofavorite" value="お気に入りに登録"  />
+		<input type="submit" name="removefavorite" value="お気に入りから外す"  />
+	</form>
+	
+	<p><img src="<%= request.getContextPath() %>/upload/1katsudon.jpg" width="412" alt="かつ丼の画像" /></p>
+	
 	<h3>材料</h3>
 	<ul>
 		<li>ごはん 180g</li>
@@ -22,7 +35,6 @@
 		<li>揚げ油 適量</li>
 		<li>玉ねぎ 1/4個</li>
 		<li>卵 2個</li>
-		<li></li>
 	</ul>
 
 	
@@ -53,6 +65,8 @@
 	
 	<p><a href="mypage">マイページへ戻る</a></p>
 	<p><a href="select">今日なに食べる？トップへ戻る</a></p>
-	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../js/favorite.js"></script>
 </body>
 </html>
