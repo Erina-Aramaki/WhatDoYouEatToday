@@ -12,7 +12,7 @@
 	<p><c:out value="${name} さん、マイページへようこそ！" /></p>
 	
 	<p><a href="select">◆今日なに食べる？</a></p>
-	<p><a href="">◆お気に入り</a></p>
+	<p><a href="favorite">◆お気に入り</a></p>
 	<p><a href="user">◆会員情報</a></p>
 	
 	<p><a href="../logout">ログアウト</a></p>

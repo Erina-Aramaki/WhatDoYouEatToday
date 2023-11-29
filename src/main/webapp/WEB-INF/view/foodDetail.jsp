@@ -20,8 +20,8 @@
 	<!-- 		<input type="submit" name="addtofavorite" class="btn btn-primary addtofavorite" value="お気に入りに登録"  />
 			<input type="submit" name="removefavorite" class="btn btn-primary removefavorite hidden" value="お気に入りから外す"  />
 	 -->	    
-			<input type="submit" name="addtofavorite" value="お気に入りに登録"  />
-			<input type="submit" name="removefavorite" value="お気に入りから外す"  />
+			<input type="submit" name="addToFavorite" value="お気に入りに登録"  />
+			<input type="submit" name="removeFavorite" value="お気に入りから外す"  />
 		</form>
 		
 		<p><img src="<%= request.getContextPath() %>/upload/${num }.jpg" width="412" alt="${foodName }の画像" /></p>
@@ -65,8 +65,8 @@
 		<p><a href="mypage">マイページへ戻る</a></p>
 		<p><a href="select">今日なに食べる？トップへ戻る</a></p>
 	<%-- </c:forEach> --%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="../js/favorite.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../js/favorite.js"></script> -->
 
 </body>
 </html>

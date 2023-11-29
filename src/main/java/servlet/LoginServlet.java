@@ -67,6 +67,7 @@ public class LoginServlet extends HttpServlet {
 		
 		response.sendRedirect(request.getContextPath() + "/admin/mypage");
 		return;
+	
 	}
 
 }

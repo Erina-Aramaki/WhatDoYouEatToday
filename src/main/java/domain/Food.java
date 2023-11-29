@@ -15,7 +15,6 @@ public class Food {
 	private int id;
 	private String name;
 	private String material;
-	private String source;
 	private int stapleId;
 
 }
