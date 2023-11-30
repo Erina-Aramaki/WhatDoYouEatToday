@@ -26,7 +26,7 @@
 		
 		<p><a href="favorite">お気に入りに戻る</a></p>
 		
-		<p><img src="<%= request.getContextPath() %>/upload/${num }.jpg" width="412" alt="${foodName }の画像" /></p>
+		<p><img src="<%= request.getContextPath() %>/upload/${num}.jpg" width="412" alt="${foodName }の画像" /></p>
 		
 		<h3>材料</h3>
 		<!-- 後ほどデータベースに格納する。DaoImpliも修正する -->

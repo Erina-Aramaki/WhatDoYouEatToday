@@ -46,13 +46,18 @@ public class FavoriteServlet extends HttpServlet {
 			
 			List<Food> foods = dao.checkFavorite();
 			request.setAttribute("foods", foods);
+			
+			System.out.println("foods=" + foods);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
-		request.setAttribute("num", food.getNum());
-		request.setAttribute("foodName", food.getName());
+//		request.setAttribute("num", food.getNum());
+//		request.setAttribute("foodName", food.getName());
+		
+//		System.out.println("FavoriteServlet_food.getNum()=" + food.getNum());
 		
 		
 		request.getRequestDispatcher("/WEB-INF/view/favorite.jsp").forward(request, response);
@@ -71,8 +76,8 @@ public class FavoriteServlet extends HttpServlet {
 //		request.setAttribute("source", session.getAttribute("source"));
 		
 //		DBから取得する
-		
-		String num = request.getParameter("num");
+		System.out.println("request.getParameter(\"num\")=" + request.getParameter("num"));
+		int num = Integer.parseInt(request.getParameter("num"));
 		String foodName = request.getParameter("foodName");
 //		String material = request.getParameter("material");
 		
@@ -80,7 +85,8 @@ public class FavoriteServlet extends HttpServlet {
 		request.setAttribute("foodName", foodName);
 //		request.setAttribute("material", material);
 
-		System.out.println(foodName);
+		System.out.println("num=" + num);
+		System.out.println("foodName=" + foodName);
 		
 		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
 	}

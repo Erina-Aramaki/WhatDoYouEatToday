@@ -9,20 +9,21 @@
 </head>
 <body>
 	<h1>お気に入り一覧</h1>
-	<form action="" method="post">
-		<c:forEach items="${foods}" var="food" varStatus="vs">
-			<ul>
+		<ul>
+			<c:forEach items="${foods}" var="food" varStatus="vs">
 				<li>
-					<!-- 画像 --> 
-					<input type="hidden" value="<c:out value="${food.num}" />" name="num"
-						style="border: none; background-color: transparent; color: blue; text-decoration: underline;">
-					<input type="submit" value="<c:out value="${food.name }" />" name="foodName"
-						style="border: none; background-color: transparent; color: blue; text-decoration: underline;" />
+	<form action="" method="post">
+					<!-- 画像 --> <input type="hidden"
+					value="<c:out value="${food.num}" />" name="num"
+					style="border: none; background-color: transparent; color: blue; text-decoration: underline;">
+					<input type="submit" value="<c:out value="${food.name }" />"
+					name="foodName"
+					style="border: none; background-color: transparent; color: blue; text-decoration: underline;" />
 
-				</li>
-			</ul>
-		</c:forEach>
 	</form>
+				</li>
+			</c:forEach>
+		</ul>
 
 	<p>
 		<a href="mypage">マイページへ戻る</a>
