@@ -9,22 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ChoiceServlet
+ * Servlet implementation class GenreServlet
  */
-@WebServlet("/admin/select")
-public class SelectServlet extends HttpServlet {
+@WebServlet("/admin/genre")
+public class GenreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.getRequestDispatcher("/WEB-INF/view/select.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/genre.jsp").forward(request, response);
 	}
-	
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		request.getRequestDispatcher("/WEB-INF/view/genre.jsp").forward(request, response);
-//	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 
 }

@@ -9,11 +9,13 @@
 </head>
 <body>
 	<h1>今日なに食べる？</h1>
-	<p>今日のご飯を決めるお手伝いをするよ！</p>
-	<a href="genre"><input type="submit" value="診断スタート" /></a>
-	
-	<p>料理一覧は<a href="food">こちら</a></p>
+	<p>食べたいジャンルを選択してね！</p>
+	<a href="japanese"><input type="submit" value="和食料理" /></a>
+	<a href="chinese"><input type="submit" value="中華料理" /></a>
+	<a href="western"><input type="submit" value="西洋料理" /></a>
 	
 	<p><a href="mypage">マイページへ戻る</a></p>
+	
+	
 </body>
 </html>
