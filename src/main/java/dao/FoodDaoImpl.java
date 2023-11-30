@@ -15,6 +15,7 @@ public class FoodDaoImpl implements FoodDao{
 	
 	DataSource ds;
 	List<Food> foods = new ArrayList<>();
+	Food food = new Food();
 	
 	public FoodDaoImpl(DataSource ds) {
 		this.ds = ds;
@@ -54,6 +55,67 @@ public class FoodDaoImpl implements FoodDao{
 		}
 		return foods;
 	}
+	
+	
+	@Override
+	public List<Food> material(int id, String name) throws Exception {
+		try(Connection con = ds.getConnection()){
+			//SQL文
+			String sql = "SELECT material_name FROM material WHERE id = ? AND name = ?";
+			//SQL準備
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, food.getId());
+			//SQL実行
+			ResultSet rs = stmt.executeQuery();
+			System.out.println("FoodDaoImpl_material：rs=" + rs);
+			//変換
+			System.out.println("-------------------------------------------------------------------");
+			while(rs.next()) {
+				Food food = mapToCheckFavorite(rs);
+				System.out.println("FoodDaoImpl_material：food=" + food);
+				foods.add(food);
+			}
+			System.out.println("-------------------------------------------------------------------");
+			
+		} catch (Exception e) {
+			System.out.println("FoodDaoImpl_material：失敗");
+			e.getStackTrace();
+		}
+		return foods;
+		
+	}
+	
+	
+	@Override
+	public List<Food> howToMake(List<Food> foods) throws Exception {
+		try(Connection con = ds.getConnection()){
+			//SQL文
+			String sql = "SELECT * FROM how_to_make WHERE id = ? AND name = ?";
+			//SQL準備
+			PreparedStatement stmt = con.prepareStatement(sql);
+			//SQL実行
+			ResultSet rs = stmt.executeQuery();
+			System.out.println("FoodDaoImpl_howToMake：rs=" + rs);
+			//変換
+			System.out.println("-------------------------------------------------------------------");
+			while(rs.next()) {
+				Food food = Food.builder()
+						.num(rs.getInt("id"))
+						.name(rs.getString("name"))
+						.material(rs.getString("material_name")) //後ほど実装
+						.build();
+				System.out.println("FoodDaoImpl_howToMake：food=" + food);
+				foods.add(food);
+			}
+			System.out.println("-------------------------------------------------------------------");
+			
+		} catch (Exception e) {
+			System.out.println("FoodDaoImpl_howToMake：失敗");
+			e.getStackTrace();
+		}
+		return foods;
+		
+	}
 
 	@Override
 	public Food findById(Integer id) throws Exception {
@@ -62,7 +124,7 @@ public class FoodDaoImpl implements FoodDao{
 	}
 
 	@Override
-	public void insert(Food admin) throws Exception {
+	public void insert(Food food) throws Exception {
 		
 	}
 	

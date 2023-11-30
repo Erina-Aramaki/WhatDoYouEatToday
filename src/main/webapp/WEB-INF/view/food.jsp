@@ -31,6 +31,7 @@
 						<input type="hidden" value="<c:out value="${food.num}" />" name="num" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
 						<input type="submit" value="<c:out value="${food.name}" />" name="foodName" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
 						<input type="hidden" value="<c:out value="${food.material}" />" name="material" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
+						<input type="hidden" value="<c:out value="${food.howToMake}" />" name="howToMake" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
 					</form>
 					
 				</td></tr>

@@ -6,11 +6,15 @@ import domain.Food;
 
 public interface FoodDao {
 
-List<Food> findAll() throws Exception;
+	List<Food> findAll() throws Exception;
+	
+	public List<Food> material(int id, String name) throws Exception;
+	
+	List<Food> howToMake(List<Food> foods) throws Exception;
 	
 	Food findById(Integer id) throws Exception;
 	
-	void insert(Food admin) throws Exception;
+	void insert(Food food) throws Exception;
 	
 //	void update(Admin admin) throws Exception; 時間があれば実装
 	
