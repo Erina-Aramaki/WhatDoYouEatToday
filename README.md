@@ -28,15 +28,18 @@
 - お気に入り（登録機能、表示機能）
 
 ## 今後実装予定    
-- レシピ削除機能    
-- API（レシピ検索、お店検索）    
-- お気に入り削除機能
-- サイトデザイン（CSS、JavaScript）
+- API（レシピ検索、お店検索）   
+- サイトデザイン（CSS、JavaScript）   
+- レシピ削除機能   
+- お気に入り削除機能   
+
 
 ## 苦労した点
-テーブル結合したものに「ROW_NUMBER()」で連番を付与を付与し、ランダム関数の結果と一致する番号のカラムを取得することに苦戦しました。   
-- 「WesternDaoImpl.java」の select(String strId) メソッド
+SQL文にの作成に苦戦し、Qiitaなどのサイトで調べながら作成しました。
+特に、テーブル結合したものに「ROW_NUMBER()」で連番を付与を付与し、ランダム関数の結果と一致する番号のカラムを取得することが難しかったです。
+苦戦したと同時に、SQLの面白さにも気づくことができたため、今後もSQLを積極的に活用できるよう学習を進めていこうと思います。
 
+- 「WesternDaoImpl.java」の select(String strId) メソッド
 ![苦戦した点](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/a92f7a62-2198-4580-8223-9b87ba95a10c)
 
 ## ER図
