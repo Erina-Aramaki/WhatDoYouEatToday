@@ -24,6 +24,8 @@
 			<input type="submit" name="removeFavorite" value="お気に入りから外す"  />
 		</form>
 		
+		<p><a href="favorite">お気に入りに戻る</a></p>
+		
 		<p><img src="<%= request.getContextPath() %>/upload/${num }.jpg" width="412" alt="${foodName }の画像" /></p>
 		
 		<h3>材料</h3>
