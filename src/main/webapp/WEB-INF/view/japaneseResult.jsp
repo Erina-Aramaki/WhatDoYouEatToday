@@ -21,7 +21,7 @@
 	<!-- JapaneseServletからフォワードで次のサーブレットに遷移させたときに実装する -->
 	<!-- <p><a href=""></a>西洋料理 選択画面へ戻る</p> -->
 	<p><a href="map">マップを表示する</a></p>
-	<p><a href="select">今日なに食べる？トップへ戻る</a></p>
+	<p><a href="select">もう一度診断する</a></p>
 	<p><a href="mypage">マイページへ戻る</a></p>
 </body>
 </html>
