@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>レシピ</title>
+<title>レシピ | 今日なに食べる？</title>
 </head>
 <body>
 	<%-- <c:forEach items="${foods}" var="food" varStatus="vs"> --%>

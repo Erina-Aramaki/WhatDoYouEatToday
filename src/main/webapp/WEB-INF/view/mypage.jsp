@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>会員専用</title>
+<title>会員専用 | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>会員ページ</h1>

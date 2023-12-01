@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>西洋のオススメ料理</title>
+<title>西洋のオススメ料理 | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>西洋のオススメ料理</h1>

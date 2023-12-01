@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>会員情報</title>
+<title>会員情報 | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>会員情報を編集</h1>

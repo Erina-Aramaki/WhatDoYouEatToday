@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>料理一覧</title>
+<title>料理一覧 | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>すべての料理♪</h1>

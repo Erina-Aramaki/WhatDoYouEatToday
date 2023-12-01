@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>会員登録</title>
+<title>会員登録 | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>会員登録</h1>

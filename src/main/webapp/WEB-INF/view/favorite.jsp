@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>お気に入り</title>
+<title>お気に入り | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>お気に入り一覧</h1>

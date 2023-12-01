@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ログアウト</title>
+<title>ログアウト | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>ログアウトしました</h1>
