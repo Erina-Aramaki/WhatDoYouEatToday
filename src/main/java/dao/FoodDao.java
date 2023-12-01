@@ -8,7 +8,7 @@ public interface FoodDao {
 
 	List<Food> findAll() throws Exception;
 	
-	public List<Food> material(int id, String name) throws Exception;
+	List<Food> material(int id, String name) throws Exception;
 	
 	List<Food> howToMake(List<Food> foods) throws Exception;
 	

@@ -50,7 +50,9 @@
 		</ul> -->
 		
 		<ul>
-			<li>${material }</li>
+			<c:forEach items="${Foods_material}" var="material" varStatus="vs">		
+				<li>${material.material }</li>
+			</c:forEach>
 		</ul>
 		
 	
@@ -67,7 +69,7 @@
 			<li>玉ねぎがしんなりしたら、中火のまま6と軽く溶きほぐした卵を入れます。蓋をして火を止め、30秒蒸らします。</li>
 			<li>丼にごはんをよそい、8をのせ、1を散らして出来上がりです。</li>
 		</ol>
-		
+
 		<p><a href="mypage">マイページへ戻る</a></p>
 		<p><a href="select">今日なに食べる？トップへ戻る</a></p>
 	<%-- </c:forEach> --%>

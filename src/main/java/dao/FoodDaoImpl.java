@@ -58,22 +58,28 @@ public class FoodDaoImpl implements FoodDao{
 	
 	
 	@Override
-	public List<Food> material(int id, String name) throws Exception {
+	public List<Food> material(int num, String name) throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
-			String sql = "SELECT material_name FROM material WHERE id = ? AND name = ?";
+			String sql = "SELECT * FROM material WHERE num = ? AND name = ?";
 			//SQL準備
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setInt(1, food.getId());
+			stmt.setInt(1, num);
+			stmt.setString(2, name);
 			//SQL実行
 			ResultSet rs = stmt.executeQuery();
 			System.out.println("FoodDaoImpl_material：rs=" + rs);
 			//変換
 			System.out.println("-------------------------------------------------------------------");
 			while(rs.next()) {
-				Food food = mapToCheckFavorite(rs);
+				Food food = Food.builder()
+						.num(rs.getInt("num"))
+						.name(rs.getString("name"))
+						.material(rs.getString("material_name"))
+						.build();
 				System.out.println("FoodDaoImpl_material：food=" + food);
 				foods.add(food);
+//				return food;
 			}
 			System.out.println("-------------------------------------------------------------------");
 			

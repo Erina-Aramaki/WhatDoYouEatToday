@@ -27,20 +27,20 @@ public class FoodDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String strNum = request.getParameter("num");
-		System.out.println("strNum=" + strNum);
+		System.out.println("FoodDetailServlet_strNum=" + strNum);
 		int num = (int)Integer.parseInt(strNum);
-		System.out.println("num=" + num);	
+		System.out.println("FoodDetailServlet_num=" + num);	
 		request.setAttribute("num", num);
 		
 		String foodName = request.getParameter("foodName");
-		System.out.println("foodName=" + foodName);	
+		System.out.println("FoodDetailServlet_foodName=" + foodName);	
 		request.setAttribute("foodName", foodName);
 		
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			List<Food> material = dao.material(num, foodName);
-			System.out.println("material=" + material);	
-			request.setAttribute("material", material);
+			System.out.println("FoodDetailServlet_material=" + material);	
+			request.setAttribute("Foods_material", material);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
