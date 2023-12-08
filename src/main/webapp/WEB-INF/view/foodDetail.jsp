@@ -26,7 +26,7 @@
 		
 		<p><a href="favorite">お気に入りに戻る</a></p>
 		
-		<p><img src="<%= request.getContextPath() %>/upload/${num}.jpg" width="412" alt="${foodName }の画像" /></p>
+		<p><img src="<%= request.getContextPath() %>/upload/${num}.png" width="412" alt="${foodName }の画像" /></p>
 		
 		<h3>材料</h3>
 		<!-- 後ほどデータベースに格納する。DaoImpliも修正する -->
@@ -49,7 +49,7 @@
 			<li>三つ葉 3g</li>
 		</ul> -->
 		
-		<ul>
+		 <ul>
 			<c:forEach items="${Foods_material}" var="material" varStatus="vs">		
 				<li>${material.material }</li>
 			</c:forEach>
@@ -58,7 +58,7 @@
 	
 		<h3>作り方</h3>
 		<!-- 後ほどデータベースに格納する。DaoImpliも修正する -->
-		<ol>
+		<!-- <ol>
 			<li>三つ葉は根元を切り落とし、2cm幅に切ります。</li>
 			<li>玉ねぎは薄切りにします。</li>
 			<li>豚ロースは筋を切ります。ラップをのせて麺棒で叩き、両面に塩こしょうをふります。</li>
@@ -69,7 +69,13 @@
 			<li>玉ねぎがしんなりしたら、中火のまま6と軽く溶きほぐした卵を入れます。蓋をして火を止め、30秒蒸らします。</li>
 			<li>丼にごはんをよそい、8をのせ、1を散らして出来上がりです。</li>
 		</ol>
-
+ -->
+ 		 <ol>
+ 			<c:forEach items="${Foods_howToMake}" var="howToMake" varStatus="vs">
+ 				<li>${howToMake.howToMake }</li>
+ 			</c:forEach>
+ 		</ol> 
+ 		
 		<p><a href="mypage">マイページへ戻る</a></p>
 		<p><a href="select">今日なに食べる？トップへ戻る</a></p>
 	<%-- </c:forEach> --%>

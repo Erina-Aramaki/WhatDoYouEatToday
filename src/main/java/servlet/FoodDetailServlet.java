@@ -26,6 +26,7 @@ public class FoodDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		String strNum = request.getParameter("num");
 		System.out.println("FoodDetailServlet_strNum=" + strNum);
 		int num = (int)Integer.parseInt(strNum);
@@ -39,11 +40,17 @@ public class FoodDetailServlet extends HttpServlet {
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			List<Food> material = dao.material(num, foodName);
+			List<Food> howToMake = dao.howToMake(num, foodName, material);
 			System.out.println("FoodDetailServlet_material=" + material);	
+			System.out.println("FoodDetailServlet_howToMake=" + howToMake);	
 			request.setAttribute("Foods_material", material);
+			request.setAttribute("Foods_howToMake", howToMake);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
+		
 //		List<Food> howToMake = dao.howToMake(foods);
 		
 //		String material = request.getParameter("material");

@@ -10,7 +10,7 @@ public interface FoodDao {
 	
 	List<Food> material(int id, String name) throws Exception;
 	
-	List<Food> howToMake(List<Food> foods) throws Exception;
+	List<Food> howToMake(int num, String name, List<Food> material) throws Exception;
 	
 	Food findById(Integer id) throws Exception;
 	

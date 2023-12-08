@@ -14,7 +14,7 @@ import domain.Food;
 public class FoodDaoImpl implements FoodDao{
 	
 	DataSource ds;
-	List<Food> foods = new ArrayList<>();
+//	List<Food> foods = new ArrayList<>();
 	Food food = new Food();
 	
 	public FoodDaoImpl(DataSource ds) {
@@ -23,7 +23,7 @@ public class FoodDaoImpl implements FoodDao{
 
 	@Override
 	public List<Food> findAll() throws Exception {
-
+		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			String sql = "SELECT "
@@ -59,6 +59,7 @@ public class FoodDaoImpl implements FoodDao{
 	
 	@Override
 	public List<Food> material(int num, String name) throws Exception {
+		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			String sql = "SELECT * FROM material WHERE num = ? AND name = ?";
@@ -93,25 +94,34 @@ public class FoodDaoImpl implements FoodDao{
 	
 	
 	@Override
-	public List<Food> howToMake(List<Food> foods) throws Exception {
+	public List<Food> howToMake(int num, String name, List<Food> material) throws Exception {
+		List<Food> foods = new ArrayList<>();
+		System.out.println(num + "," + name);
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			String sql = "SELECT * FROM how_to_make WHERE id = ? AND name = ?";
 			//SQL準備
 			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, num);
+			stmt.setString(2, name);
 			//SQL実行
 			ResultSet rs = stmt.executeQuery();
 			System.out.println("FoodDaoImpl_howToMake：rs=" + rs);
 			//変換
 			System.out.println("-------------------------------------------------------------------");
+			int i = 0;
 			while(rs.next()) {
+				
 				Food food = Food.builder()
 						.num(rs.getInt("id"))
 						.name(rs.getString("name"))
-						.material(rs.getString("material_name")) //後ほど実装
+						.material(material.get(i).getMaterial())
+						.howToMake(rs.getString("explanation")) //後ほど実装
 						.build();
-				System.out.println("FoodDaoImpl_howToMake：food=" + food);
+				System.out.println("FoodDaoImpl_howToMake：food=" + food.getHowToMake());
 				foods.add(food);
+				System.out.println("FoodDaoImpl_howToMake：foodsssss=" + foods.get(i).getHowToMake());
+				i += 1;
 			}
 			System.out.println("-------------------------------------------------------------------");
 			
@@ -190,7 +200,7 @@ public class FoodDaoImpl implements FoodDao{
 
 	@Override
 	public List<Food> checkFavorite() throws Exception {
-		
+		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			
 			//！！！後ほどmaterialも実装する
