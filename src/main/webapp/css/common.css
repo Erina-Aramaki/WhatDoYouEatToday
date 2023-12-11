@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-* {
-    width: 300px;
-    margin: 0 auto;
+body {
+    width: 1080px;
+	margin: 100px auto;
+    background-color: pink;
+    text-align: center;
 }
