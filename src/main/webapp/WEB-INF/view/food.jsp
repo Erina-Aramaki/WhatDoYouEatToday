@@ -5,6 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<%-- <link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" /> --%>
 <title>料理一覧 | 今日なに食べる？</title>
 </head>
 <body>
