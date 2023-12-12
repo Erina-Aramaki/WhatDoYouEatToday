@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DaoFactory;
 import dao.FoodDao;
@@ -36,15 +37,18 @@ public class FavoriteServlet extends HttpServlet {
 //		String loginId = (String) session.getAttribute("loginId");
 //		String name = (String) session.getAttribute("name");
 
-		Food food = new Food();
+//		Food food = new Food();
+		
+		
+		HttpSession session = request.getSession();
+		String loginId = (String) session.getAttribute("loginId");
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			
 			//重複を削除
 			dao.checkDuplicate();
 			
-			
-			List<Food> foods = dao.checkFavorite();
+			List<Food> foods = dao.checkFavorite(loginId);
 			request.setAttribute("foods", foods);
 			
 			System.out.println("foods=" + foods);
@@ -85,8 +89,22 @@ public class FavoriteServlet extends HttpServlet {
 		request.setAttribute("foodName", foodName);
 //		request.setAttribute("material", material);
 
+		FoodDao dao = DaoFactory.createFoodDao();
+		try {
+			List<Food> material = dao.material(num, foodName);
+			List<Food> howToMake = dao.howToMake(num, foodName, material);
+			request.setAttribute("Foods_material", material);
+			request.setAttribute("Foods_howToMake", howToMake);
+			
+			System.out.println("material=" + material);
+			System.out.println("howToMake=" + howToMake);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		System.out.println("num=" + num);
 		System.out.println("foodName=" + foodName);
+		
 		
 		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
 	}
