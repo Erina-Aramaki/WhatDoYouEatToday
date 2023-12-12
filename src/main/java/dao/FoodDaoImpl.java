@@ -199,24 +199,27 @@ public class FoodDaoImpl implements FoodDao{
 	
 
 	@Override
-	public List<Food> checkFavorite() throws Exception {
+	public List<Food> checkFavorite(String loginId) throws Exception {
 		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			
 			//！！！後ほどmaterialも実装する
 			
 			//SQL文
-			String sql = "SELECT "
-					+ " food_num AS num, food_name AS name "
-					+ " FROM( "
-					+ " SELECT japanese_food.name, japanese_food.staple_id FROM japanese_food "
-					+ " UNION "
-					+ " SELECT chinese_food.name, chinese_food.staple_id FROM chinese_food "
-					+ " UNION "
-					+ " SELECT western_food.name, western_food.staple_id FROM western_food)AS all_food "
-					+ " JOIN favorite ON all_food.name = favorite.food_name";
+//			String sql = "SELECT "
+//					+ " food_num AS num, food_name AS name "
+//					+ " FROM( "
+//					+ " SELECT japanese_food.name, japanese_food.staple_id FROM japanese_food "
+//					+ " UNION "
+//					+ " SELECT chinese_food.name, chinese_food.staple_id FROM chinese_food "
+//					+ " UNION "
+//					+ " SELECT western_food.name, western_food.staple_id FROM western_food)AS all_food "
+//					+ " JOIN favorite ON all_food.name = favorite.food_name";
+			
+			String sql = "SELECT * FROM favorite WHERE login_id = ?";
 			//SQL準備
 			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, loginId);
 			//SQL実行
 			ResultSet rs = stmt.executeQuery();
 			System.out.println("FoodDaoImpl_checkFavorite：rs=" + rs);
@@ -249,9 +252,9 @@ public class FoodDaoImpl implements FoodDao{
 	
 	public Food mapToCheckFavorite(ResultSet rs) throws SQLException {
 		Food food = Food.builder()
-				.num(rs.getInt("num"))
-				.name(rs.getString("name"))
-//				.material(rs.getString("material")) //後ほど実装
+				.num(rs.getInt("food_num"))
+				.name(rs.getString("food_name"))
+//				.material(rs.getString("material"))
 				.build();
 		return food;
 	}
