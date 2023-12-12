@@ -13,15 +13,16 @@
 	
 	<!-- select() -->
 	<!-- リストで取得してループさせていないため、配列番号を指定する必要がある -->
-	<p><c:out value="${chinese.get(0).name}" /></p>
+	<%-- <p><c:out value="${chinese.get(0).name}" /></p> --%>
 
+	<p><img src="<%= request.getContextPath() %>/upload/${stapleChinese.name}.png" width="412" alt="${stapleChinese.name }の画像" /></p>
 	<!-- stapleFood(String strId) -->
 	<p><c:out value="${stapleChinese.name}" /></p>
 	
 	<!-- ChineseServletからフォワードで次のサーブレットに遷移させたときに実装する -->
 	<!-- <p><a href=""></a>中華料理 選択画面へ戻る</p> -->
 	<p><a href="map">マップを表示する</a></p>
-	<p><a href="select">もう一度診断する</a></p>
+	<p><a href="genre">もう一度診断する</a></p>
 	<p><a href="mypage">マイページへ戻る</a></p>
 </body>
 </html>
