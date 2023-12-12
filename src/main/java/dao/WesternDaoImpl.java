@@ -33,6 +33,7 @@ public class WesternDaoImpl implements WesternDao{
 	public Western select(String strId) throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
+			//western_foodの米、麺、肉、魚、軽食から絞り込み
 			String sql = "SELECT ROW_NUMBER() OVER(ORDER BY id ASC) Num, id, Name, staple_id, staplefood_name "
 					+ " FROM (SELECT western_food.id, western_food.name, western_food.staple_id, "
 					+ " staple_food.name AS staplefood_name "
@@ -62,6 +63,7 @@ public class WesternDaoImpl implements WesternDao{
 			System.out.println("stapleFood（ランダム結果）num：" + num);
 			
 			
+			//1行のみ表示し、特定の食べ物の詳細情報（num(western_food)、id、name、staple）を取得
 			String sql2 = "SELECT staple_western.* "
 					+ "FROM( "
 					+ " SELECT ROW_NUMBER() OVER(ORDER BY id ASC) Num, id, Name, staple_id, staplefood_id, staplefood_name "

@@ -48,6 +48,7 @@ public class WesternServlet extends HttpServlet {
 			WesternDao dao = DaoFactory.createWesternDao();
 			Western stapleWestern = dao.select(strId);
 			System.out.println("WesternServlet：stapleWestern=" + stapleWestern);
+			
 			request.setAttribute("stapleWestern", stapleWestern);
 			request.getRequestDispatcher("/WEB-INF/view/westernResult.jsp").forward(request, response);
 		} catch (Exception e) {
