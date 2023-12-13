@@ -169,6 +169,10 @@ public class FoodDaoImpl implements FoodDao{
 
 	@Override
 	public void removeFavorite(String login_id, String name, int foodNum, String foodName, String material) throws Exception {
+		try(Connection con = ds.getConnection()){
+			//SQL文
+			
+		}
 		
 	}
 	
@@ -203,7 +207,6 @@ public class FoodDaoImpl implements FoodDao{
 		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			
-			//！！！後ほどmaterialも実装する
 			
 			//SQL文
 //			String sql = "SELECT "
