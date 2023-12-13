@@ -45,8 +45,8 @@ public class FavoriteServlet extends HttpServlet {
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			
-			//重複を削除
-			dao.checkDuplicate();
+			//重複チェック
+//			dao.checkDuplicate();
 			
 			List<Food> foods = dao.checkFavorite(loginId);
 			request.setAttribute("foods", foods);
@@ -79,8 +79,19 @@ public class FavoriteServlet extends HttpServlet {
 //		request.setAttribute("material", session.getAttribute("material"));
 //		request.setAttribute("source", session.getAttribute("source"));
 		
+
+		
+//		if(request.getParameter("num") = null) {
+//			HttpSession session = request.getSession();
+//			String loginId = (String) session.getAttribute("loginId");
+//			FoodDao dao = DaoFactory.createFoodDao();
+//			List<Food> foods = dao.checkFavorite(loginId);
+//			System.out.println(foods.get(1).getId());
+//		}
+		
+		
 //		DBから取得する
-		System.out.println("request.getParameter(\"num\")=" + request.getParameter("num"));
+		System.out.println("FavoriteServlet：request.getParameter(\"num\")=" + request.getParameter("num"));
 		int num = Integer.parseInt(request.getParameter("num"));
 		String foodName = request.getParameter("foodName");
 //		String material = request.getParameter("material");
@@ -107,6 +118,8 @@ public class FavoriteServlet extends HttpServlet {
 		
 		
 		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
+//		response.sendRedirect(request.getContextPath() + "/admin/foodDetail");
+//		return;
 	}
 
 }

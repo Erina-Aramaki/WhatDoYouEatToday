@@ -14,7 +14,7 @@ import domain.Food;
 public class FoodDaoImpl implements FoodDao{
 	
 	DataSource ds;
-//	List<Food> foods = new ArrayList<>();
+	List<Food> foods = new ArrayList<>();
 	Food food = new Food();
 	
 	public FoodDaoImpl(DataSource ds) {
@@ -23,7 +23,6 @@ public class FoodDaoImpl implements FoodDao{
 
 	@Override
 	public List<Food> findAll() throws Exception {
-		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			String sql = "SELECT "
@@ -59,7 +58,6 @@ public class FoodDaoImpl implements FoodDao{
 	
 	@Override
 	public List<Food> material(int num, String name) throws Exception {
-		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			String sql = "SELECT * FROM material WHERE num = ? AND name = ?";
@@ -95,7 +93,6 @@ public class FoodDaoImpl implements FoodDao{
 	
 	@Override
 	public List<Food> howToMake(int num, String name, List<Food> material) throws Exception {
-		List<Food> foods = new ArrayList<>();
 		System.out.println(num + "," + name);
 		try(Connection con = ds.getConnection()){
 			//SQL文
@@ -145,47 +142,75 @@ public class FoodDaoImpl implements FoodDao{
 	}
 	
 	@Override
-	public void addToFavorite(String login_id, String name, int foodNum, String foodName, String material) throws Exception {
+	public void addToFavorite(String loginId, String name, int foodNum, String foodName) throws Exception {
 		try(Connection con = ds.getConnection()){
-			
+			//お気に入りリスト重複チェック
+			String sql = "SELECT * FROM favorite WHERE login_id = ? AND food_num = ?";
+			//SQL準備
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, loginId);
+			stmt.setInt(2, foodNum);
+			//SQL実行
+			ResultSet rs = stmt.executeQuery();
+			System.out.println("foodDaoImpl_addToFavorite：rs=" + rs);
+			//変換
+			if(rs.next()) {
+				//お気に入りに追加されていたらwhile文実行
+				System.out.println("既にお気に入り登録されているため、登録処理を行いません");
+			}else {
+			//お気に入りに追加されていなかったら以下の追加処理を実行
 			//SQL文
-			String sql = "INSERT INTO favorite(login_id, login_name, food_num, food_name) "
+			String sql2 = "INSERT INTO favorite(login_id, login_name, food_num, food_name) "
 					+ " VALUE(?, ?, ?, ?)";
 			
 			//SQL文準備
-			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setString(1, login_id);
-			stmt.setString(2, name);
-			stmt.setInt(3, foodNum);
-			stmt.setString(4, foodName);
+			PreparedStatement stmt2 = con.prepareStatement(sql2);
+			stmt2.setString(1, loginId);
+			stmt2.setString(2, name);
+			stmt2.setInt(3, foodNum);
+			stmt2.setString(4, foodName);
+		
+			System.out.println("foodDaoImpl_addToFavoriteメソッド：" + loginId +"," + name +"," + foodNum +"," + foodName);
+			//SQL実行
+			stmt2.executeUpdate();
+			}
 			
-			System.out.println("foodDaoImpl_addToFavoriteメソッド：" + login_id +"," + name +"," + foodNum +"," + foodName);
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("foodDaoImpl_addToFavorite失敗");
+		}
+	}
+
+	@Override
+	public void removeFavorite(String loginId, int foodNum) throws Exception {
+		try(Connection con = ds.getConnection()){
+			//SQL文
+			String sql = "DELETE FROM favorite WHERE login_id = ? AND food_num = ?";
+			
+			//SQL文準備
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, loginId);
+			stmt.setInt(2, foodNum);
+			
 			//SQL実行
 			stmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public void removeFavorite(String login_id, String name, int foodNum, String foodName, String material) throws Exception {
-		try(Connection con = ds.getConnection()){
-			//SQL文
-			
-		}
 		
 	}
 	
 	@Override
-	public void checkDuplicate() throws Exception {
+	public Food checkDuplicate() throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
-			String sql = "DELETE FROM favorite WHERE id "
-					+ " NOT IN (SELECT min_id from (SELECT MIN(id) min_id FROM favorite GROUP BY food_num, food_name) tmp)";
+//			String sql = "DELETE FROM favorite WHERE id AND food_num"
+//					+ " NOT IN (SELECT min_id from (SELECT MIN(id) min_id FROM favorite GROUP BY food_num, food_name) tmp)";
 			//SQL準備
-			PreparedStatement stmt = con.prepareStatement(sql);
+//			PreparedStatement stmt = con.prepareStatement(sql);
+//			System.out.println("checkDuplicate:stmt=" + stmt);
 			//SQL実行
-			stmt.executeUpdate();
+//			stmt.executeUpdate();
 			//変換
 //			System.out.println("-------------------------------------------------------------------");
 //			while(rs.next()) {
@@ -195,16 +220,33 @@ public class FoodDaoImpl implements FoodDao{
 //			}
 //			System.out.println("-------------------------------------------------------------------");
 			
+			//SQL文
+//			String sql = "SELECT * FROM favorite WHERE login_id = ? AND food_num = ?";
+//			//SQL準備
+//			PreparedStatement stmt = con.prepareStatement(sql);
+//			stmt.setString(1, loginId);
+//			stmt.setInt(2, num);
+//			//SQL実行
+//			ResultSet rs = stmt.executeQuery();
+//			//変換
+//			if(rs.next()) {
+//				Food food = mapToCheckFavorite(rs);
+//				if(food == null) {
+//					return food;
+//				}
+//			}
+			
+			
 		} catch (Exception e) {
 			System.out.println("FoodDaoImpl_checkDuplicate：失敗");
 			e.getStackTrace();
 		}
+		return null;
 	}
 	
 
 	@Override
 	public List<Food> checkFavorite(String loginId) throws Exception {
-		List<Food> foods = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			
 			

@@ -12,15 +12,15 @@
 		<ul>
 			<c:forEach items="${foods}" var="food" varStatus="vs">
 				<li>
-	<form action="" method="post">
-					<!-- 画像 --> <input type="hidden"
-					value="<c:out value="${food.num}" />" name="num"
-					style="border: none; background-color: transparent; color: blue; text-decoration: underline;">
-					<input type="submit" value="<c:out value="${food.name }" />"
-					name="foodName"
-					style="border: none; background-color: transparent; color: blue; text-decoration: underline;" />
-
-	</form>
+					<form action="" method="post">
+						<input type="hidden"
+						value="<c:out value="${food.num}" />" name="num" 
+						style="border: none; background-color: transparent; color: blue; text-decoration: underline;">
+						<input type="submit" value="<c:out value="${food.name }" />"
+						name="foodName"
+						style="border: none; background-color: transparent; color: blue; text-decoration: underline;" />
+	
+					</form>
 				</li>
 			</c:forEach>
 		</ul>

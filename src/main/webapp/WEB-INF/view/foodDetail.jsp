@@ -15,6 +15,9 @@
 		<!-- お気に入りボタン -->
 		<form action="" method="post">
 			<span class="favoritedmark fade">★</span>
+			<!-- お気に入り登録用のもう一つのservletとjspを作る際には、post送信になるためformの中にnumを入れる -->
+			
+			
 			<!-- <button class="btn btn-primary addtofavorite">お気に入りに登録</button> -->
 		    <!-- <button class="btn btn-primary removefavorite hidden">お気に入りから外す</button> -->
 	<!-- 		<input type="submit" name="addtofavorite" class="btn btn-primary addtofavorite" value="お気に入りに登録"  />
@@ -27,10 +30,9 @@
 		<p><a href="favorite">お気に入りに戻る</a></p>
 		
 		<%-- <p><img src="<%= request.getContextPath() %>/upload/${num}.png" width="412" alt="${foodName }の画像" /></p> --%>
-		<p><img src="<%= request.getContextPath() %>/upload/${foodName}.png" width="412" alt="${foodName }の画像" /></p>
+		<p><img src="<%= request.getContextPath() %>/upload/${foodName}.png" width="412" alt="${num }${ foodName}の画像" /></p>
 		
 		<h3>材料</h3>
-		<!-- 後ほどデータベースに格納する。DaoImpliも修正する -->
 		
 		 <ul>
 			<c:forEach items="${Foods_material}" var="material" varStatus="vs">		
@@ -40,7 +42,6 @@
 		
 	
 		<h3>作り方</h3>
-		<!-- 後ほどデータベースに格納する。DaoImpliも修正する -->
 
  		 <ol>
  			<c:forEach items="${Foods_howToMake}" var="howToMake" varStatus="vs">

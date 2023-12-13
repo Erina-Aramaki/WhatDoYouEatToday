@@ -24,13 +24,13 @@ public interface FoodDao {
 //	void delete(Admin admin) throws Exception; 時間があれば実装
 	
 //	お気に入りに登録
-	void addToFavorite(String login_id, String name, int foodNum, String foodName, String material) throws Exception;
+	void addToFavorite(String loginId, String name, int foodNum, String foodName) throws Exception;
 	
 //	お気に入りから削除
-	void removeFavorite(String login_id, String name, int foodNum, String foodName, String material) throws Exception;
+	void removeFavorite(String loginId, int foodNum) throws Exception;
 	
 //	お気に入りに追加されていたら重複を削除
-	void checkDuplicate() throws Exception;
+	Food checkDuplicate() throws Exception;
 	
 //	お気に入り一覧表示
 	List<Food> checkFavorite(String loginId) throws Exception;
