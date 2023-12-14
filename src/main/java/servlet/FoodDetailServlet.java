@@ -18,6 +18,7 @@ import domain.Food;
  * Servlet implementation class FoodDetailServlet
  */
 @WebServlet("/admin/foodDetail")
+//Post→Getのためこのサーブレットで起動不可
 public class FoodDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -26,6 +27,64 @@ public class FoodDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//doPost→doGetに引っ越し
+		
+//		String addToFavorite = request.getParameter("addToFavorite");
+//		String removeFavorite = request.getParameter("removeFavorite");
+//		
+//		//URLのnum(get送信)から取得
+//		int num = Integer.parseInt(request.getParameter("num"));
+//		String FoodName = request.getParameter("foodName");
+//		System.out.println("foodDetailServlet:doPost_num=" + num);
+//		System.out.println("foodDetailServlet:doPost_foodName=" + FoodName);
+//		
+//
+//		HttpSession session = request.getSession();
+//		String loginId = (String) session.getAttribute("loginId");
+//		String name = (String) session.getAttribute("name");
+//		System.out.println("foodDetailServlet:doPost_loginId=" + loginId);
+//		System.out.println("foodDetailServlet:doPost_name=" + name);
+//
+//		
+//		request.setAttribute("foodNum", num);
+//		request.setAttribute("foodName", FoodName);
+//		
+//		int foodNum = (int) request.getAttribute("foodNum");
+//		String foodName = (String) request.getAttribute("foodName");
+//		
+//		
+//		try {
+//			FoodDao dao = DaoFactory.createFoodDao();
+//			if(addToFavorite != null) {
+//				dao.addToFavorite(loginId, name, foodNum, foodName);
+//				System.out.println("foodDetailServlet:addToFavorite実行");
+//			}
+//			//後ほど実装
+//			if(removeFavorite != null) {
+//				dao.removeFavorite(loginId, foodNum);
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		try {
+//			FoodDao dao = DaoFactory.createFoodDao();
+//			List<Food> material = dao.material(num, foodName);
+//			List<Food> howToMake = dao.howToMake(num, foodName, material);
+//			System.out.println("foodDetailServlet:doGet_material=" + material);	
+//			System.out.println("foodDetailServlet:doGet_howToMake=" + howToMake);	
+//			request.setAttribute("Foods_material", material);
+//			request.setAttribute("Foods_howToMake", howToMake);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//
+//		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
+		
+		
+		
 		
 		String strNum = request.getParameter("num");
 		System.out.println("foodDetailServlet:doGet_strNum=" + strNum);
@@ -33,12 +92,15 @@ public class FoodDetailServlet extends HttpServlet {
 		System.out.println("foodDetailServlet:doGet_num=" + num);	
 		request.setAttribute("num", num);
 		
-		String foodName = request.getParameter("foodName");
+//		String foodName = request.getParameter("foodName");
+		String foodName = request.getParameter("name");
 		System.out.println("foodDetailServlet:doGet_foodName=" + foodName);	
 		request.setAttribute("foodName", foodName);
 		
+
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
+			System.out.println(num + foodName);
 			List<Food> material = dao.material(num, foodName);
 			List<Food> howToMake = dao.howToMake(num, foodName, material);
 			System.out.println("foodDetailServlet:doGet_material=" + material);	
@@ -49,22 +111,6 @@ public class FoodDetailServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
-		
-//		List<Food> howToMake = dao.howToMake(foods);
-		
-//		String material = request.getParameter("material");
-//		System.out.println("material=" + material);	
-//		request.setAttribute("material", material);
-		
-//		String howToMake = request.getParameter("howToMake");
-//		System.out.println("howToMake=" + howToMake);	
-//		request.setAttribute("howToMake", howToMake);
-		
-		
-		
-		
-//		request.getRequestDispatcher("/WEB-INF/view/foodDetail"+ id +".jsp").forward(request, response);
 		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
 	}
 
@@ -73,16 +119,42 @@ public class FoodDetailServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		//doGet→doPostに引っ越し
+//		String strNum = request.getParameter("num");
+//		System.out.println("foodDetailServlet:doGet_strNum=" + strNum);
+//		int num = (int)Integer.parseInt(strNum);
+//		System.out.println("foodDetailServlet:doGet_num=" + num);	
+//		request.setAttribute("num", num);
+//		
+//		String foodName = request.getParameter("foodName");
+//		System.out.println("foodDetailServlet:doGet_foodName=" + foodName);	
+//		request.setAttribute("foodName", foodName);
+//		
+//		try {
+//			FoodDao dao = DaoFactory.createFoodDao();
+//			List<Food> material = dao.material(num, foodName);
+//			List<Food> howToMake = dao.howToMake(num, foodName, material);
+//			System.out.println("foodDetailServlet:doGet_material=" + material);	
+//			System.out.println("foodDetailServlet:doGet_howToMake=" + howToMake);	
+//			request.setAttribute("Foods_material", material);
+//			request.setAttribute("Foods_howToMake", howToMake);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
+		
+		
+		
 		String addToFavorite = request.getParameter("addToFavorite");
 		String removeFavorite = request.getParameter("removeFavorite");
 		
 		//URLのnum(get送信)から取得
 		int num = Integer.parseInt(request.getParameter("num"));
 		String FoodName = request.getParameter("foodName");
-//		String material = request.getParameter("material");
 		System.out.println("foodDetailServlet:doPost_num=" + num);
 		System.out.println("foodDetailServlet:doPost_foodName=" + FoodName);
-//		System.out.println("foodDetailServlet:doPost_material=" + material);
 		
 
 		HttpSession session = request.getSession();
@@ -94,11 +166,9 @@ public class FoodDetailServlet extends HttpServlet {
 		
 		request.setAttribute("foodNum", num);
 		request.setAttribute("foodName", FoodName);
-//		request.setAttribute("material", material);
 		
 		int foodNum = (int) request.getAttribute("foodNum");
 		String foodName = (String) request.getAttribute("foodName");
-		
 		
 		
 		try {
@@ -116,8 +186,23 @@ public class FoodDetailServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		try {
+			System.out.println("num=" + num + "name=" + foodName );
+			FoodDao dao = DaoFactory.createFoodDao();
+			List<Food> material = dao.material(num, foodName);
+			List<Food> howToMake = dao.howToMake(num, foodName, material);
+			System.out.println("foodDetailServlet:doGet_material=" + material);	
+			System.out.println("foodDetailServlet:doGet_howToMake=" + howToMake);	
+			request.setAttribute("Foods_material", material);
+			request.setAttribute("Foods_howToMake", howToMake);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 
 		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
+
+		
 		
 	}
 

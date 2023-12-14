@@ -15,7 +15,7 @@
 			<c:forEach items="${foods}" var="food" varStatus="vs">
 				<tr><td>
 					<%-- <a href=""><c:out value="${food.num}" /></a> --%>
-<%-- 					<a href="<c:out value="food?num=${food.num}" />"><c:out value="${food.name}" /></a> --%>
+					<a href="<%= request.getContextPath() %>/admin/foodDetail?num=${food.num}&&name=${food.name}">${food.name}</a>
 					<%-- <form action="" method="post">
 						<c:out value="${food.num}" />
 
@@ -25,15 +25,18 @@
 					
 					<%-- <a href="foodDetail?id=${food.num }">${food.name}</a> --%>
 					
-					<form action="foodDetail" method="get">
-					<!-- numとnameを表示 -->
-						<c:out value="${food.num}" />
+					
+					<!-- form送信 -->
+					<!-- <form action="foodDetail" method="get"> -->
+<!-- 					<form action="foodDetail" method="post"> -->
+<!-- 					numとnameを表示 -->
+<%-- 						<c:out value="${food.num}" /> --%>
 
-						<input type="hidden" value="<c:out value="${food.num}" />" name="num" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
-						<input type="submit" value="<c:out value="${food.name}" />" name="foodName" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
-						<input type="hidden" value="<c:out value="${food.material}" />" name="material" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
-						<input type="hidden" value="<c:out value="${food.howToMake}" />" name="howToMake" style="border:none;background-color:transparent;color:blue;text-decoration:underline;">
-					</form>
+<%-- 						<input type="hidden" value="<c:out value="${food.num}" />" name="num" style="border:none;background-color:transparent;color:blue;text-decoration:underline;"> --%>
+<%-- 						<input type="submit" value="<c:out value="${food.name}" />" name="foodName" style="border:none;background-color:transparent;color:blue;text-decoration:underline;"> --%>
+<%-- 						<input type="hidden" value="<c:out value="${food.material}" />" name="material" style="border:none;background-color:transparent;color:blue;text-decoration:underline;"> --%>
+<%-- 						<input type="hidden" value="<c:out value="${food.howToMake}" />" name="howToMake" style="border:none;background-color:transparent;color:blue;text-decoration:underline;"> --%>
+<!-- 					</form> -->
 					
 				</td></tr>
 			</c:forEach>

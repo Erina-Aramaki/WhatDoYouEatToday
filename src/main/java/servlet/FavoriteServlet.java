@@ -18,6 +18,7 @@ import domain.Food;
  * Servlet implementation class FavoriteServlet
  */
 @WebServlet("/admin/favorite")
+//Post→Getのためこのサーブレットで起動不可
 public class FavoriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -52,6 +53,10 @@ public class FavoriteServlet extends HttpServlet {
 			request.setAttribute("foods", foods);
 			
 			System.out.println("foods=" + foods);
+			
+			
+			//URLバリデーション
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,6 +114,11 @@ public class FavoriteServlet extends HttpServlet {
 			
 			System.out.println("material=" + material);
 			System.out.println("howToMake=" + howToMake);
+			
+			
+			//URLバリデーション
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

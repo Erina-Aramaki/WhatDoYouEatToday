@@ -12,15 +12,21 @@
 		<ul>
 			<c:forEach items="${foods}" var="food" varStatus="vs">
 				<li>
-					<form action="" method="post">
+	<%-- 			<form action="" method="post">
+					 <!-- ↓挙動OK -->
+					 <!-- <form action="favoriteDetail" method="get">  -->
+					 <!-- ↓挙動OK -->
+					 <!-- <form action="foodDetail" method="get"> --> 
 						<input type="hidden"
 						value="<c:out value="${food.num}" />" name="num" 
 						style="border: none; background-color: transparent; color: blue; text-decoration: underline;">
 						<input type="submit" value="<c:out value="${food.name }" />"
 						name="foodName"
 						style="border: none; background-color: transparent; color: blue; text-decoration: underline;" />
-	
+	 
 					</form>
+	--%>
+					<a href="<%= request.getContextPath() %>/admin/foodDetail?num=${food.num}&&name=${food.name}">${food.name}</a>
 				</li>
 			</c:forEach>
 		</ul>

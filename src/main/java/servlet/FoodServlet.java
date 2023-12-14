@@ -39,10 +39,12 @@ public class FoodServlet extends HttpServlet {
 			
 //			session.setAttribute("material", material);
 //			System.out.println("FoodServlet_material："+ material);
-			
+//			
 //			session.setAttribute("howToMake", howToMake);
 //			System.out.println("FoodServlet_howToMake："+ howToMake);
 			
+			
+			//URLバリデーション
 			
 			
 		} catch (Exception e) {
@@ -57,8 +59,6 @@ public class FoodServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-			
 		
 	}
 
