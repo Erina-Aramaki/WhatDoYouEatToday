@@ -8,7 +8,6 @@
 - バックエンド
     - Java    
     - MySQL      
-    - Git/GitHub
 - フロントエンド
     - CSS
 - コード管理
