@@ -10,7 +10,7 @@ public interface JapaneseDao {
 	List<Japanese> findAll() throws Exception;
 		
 	//selectしたfoodを取得
-	Japanese select(String strId) throws Exception;
+	Japanese selectAddRandom(String strId) throws Exception;
 		
 	//選択したfoodの詳細を表示させる
 	List<Japanese> detailFood() throws Exception;

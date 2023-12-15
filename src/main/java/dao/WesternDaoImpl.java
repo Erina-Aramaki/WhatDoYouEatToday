@@ -30,7 +30,7 @@ public class WesternDaoImpl implements WesternDao{
 //	}
 
 	@Override
-	public Western select(String strId) throws Exception {
+	public Western selectAddRandom(String strId) throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			//western_foodの米、麺、肉、魚、軽食から絞り込み

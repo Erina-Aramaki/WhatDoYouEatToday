@@ -49,7 +49,7 @@ public class JapaneseDaoImpl implements JapaneseDao{
 	
 
 	@Override
-	public Japanese select(String strId) throws Exception {
+	public Japanese selectAddRandom(String strId) throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			//japanese_foodの米、麺、肉、魚、軽食から絞り込み

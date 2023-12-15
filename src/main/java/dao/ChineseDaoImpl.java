@@ -47,7 +47,7 @@ public class ChineseDaoImpl implements ChineseDao{
 	}
 	
 	@Override
-	public Chinese select(String strId) throws Exception {
+	public Chinese selectAddRandom(String strId) throws Exception {
 		try(Connection con = ds.getConnection()){
 			//SQL文
 //			String sql = "SELECT chinese_food.id, chinese_food.name, chinese_food.staple_id, "

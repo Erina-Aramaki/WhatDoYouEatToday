@@ -10,7 +10,7 @@ public interface ChineseDao {
 	List<Chinese> findAll() throws Exception;
 	
 	//主食を選択
-	Chinese select(String strId) throws Exception;
+	Chinese selectAddRandom(String strId) throws Exception;
 			
 	//selectしたfoodを取得　→　詳細を表示させる？？
 	List<Chinese> detail() throws Exception;

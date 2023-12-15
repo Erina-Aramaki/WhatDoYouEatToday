@@ -48,7 +48,7 @@ public class ChineseServlet extends HttpServlet {
 
 		try {
 			ChineseDao dao = DaoFactory.createChineseDao();
-			Chinese stapleChinese = dao.select(strId);
+			Chinese stapleChinese = dao.selectAddRandom(strId);
 			System.out.println("ChineseServlet：stapleChinese=" + stapleChinese);
 			request.setAttribute("stapleChinese", stapleChinese);
 			request.getRequestDispatcher("/WEB-INF/view/chineseResult.jsp").forward(request, response);

@@ -46,7 +46,7 @@ public class WesternServlet extends HttpServlet {
 
 		try {
 			WesternDao dao = DaoFactory.createWesternDao();
-			Western stapleWestern = dao.select(strId);
+			Western stapleWestern = dao.selectAddRandom(strId);
 			System.out.println("WesternServlet：stapleWestern=" + stapleWestern);
 			
 			request.setAttribute("stapleWestern", stapleWestern);

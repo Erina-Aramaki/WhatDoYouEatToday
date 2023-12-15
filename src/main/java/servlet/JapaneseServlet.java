@@ -62,7 +62,7 @@ public class JapaneseServlet extends HttpServlet {
 
 		try {
 			JapaneseDao dao = DaoFactory.createJapaneseDao();
-			Japanese stapleJapanese = dao.select(strId);
+			Japanese stapleJapanese = dao.selectAddRandom(strId);
 			System.out.println("JapaneseServlet：stapleJapanese=" + stapleJapanese);
 			request.setAttribute("stapleJapanese", stapleJapanese);
 			request.getRequestDispatcher("/WEB-INF/view/japaneseResult.jsp").forward(request, response);
