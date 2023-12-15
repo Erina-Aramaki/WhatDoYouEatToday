@@ -94,6 +94,7 @@ public class FoodDaoImpl implements FoodDao{
 	@Override
 	public List<Food> howToMake(int num, String name, List<Food> material) throws Exception {
 		System.out.println(num + "," + name);
+		List<Food> howToMake = new ArrayList<>();
 		try(Connection con = ds.getConnection()){
 			//SQL文
 			String sql = "SELECT * FROM how_to_make WHERE id = ? AND name = ?";
@@ -116,8 +117,8 @@ public class FoodDaoImpl implements FoodDao{
 						.howToMake(rs.getString("explanation")) //後ほど実装
 						.build();
 				System.out.println("FoodDaoImpl_howToMake：food=" + food.getHowToMake());
-				foods.add(food);
-				System.out.println("FoodDaoImpl_howToMake：foodsssss=" + foods.get(i).getHowToMake());
+				howToMake.add(food);
+				System.out.println("FoodDaoImpl_howToMake：foodsssss=" + howToMake.get(i).getHowToMake());
 				i += 1;
 			}
 			System.out.println("-------------------------------------------------------------------");
@@ -126,7 +127,7 @@ public class FoodDaoImpl implements FoodDao{
 			System.out.println("FoodDaoImpl_howToMake：失敗");
 			e.getStackTrace();
 		}
-		return foods;
+		return howToMake;
 		
 	}
 
