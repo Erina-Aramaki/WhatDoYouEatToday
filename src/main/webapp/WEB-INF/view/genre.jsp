@@ -14,7 +14,7 @@
 	<a href="chinese"><input type="submit" value="中華料理" /></a>
 	<a href="western"><input type="submit" value="西洋料理" /></a>
 	
-	<p><a href="mypage">マイページへ戻る</a></p>
+	<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
 	
 	
 </body>

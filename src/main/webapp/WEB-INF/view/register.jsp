@@ -18,6 +18,6 @@
 		<p><input type="submit" value="登録" /></p>
 	</form>
 	
-	<p><a href="login">ログインはこちら</a></p>
+	<p><a href="<%= request.getContextPath() %>/login">ログインはこちら</a></p>
 </body>
 </html>

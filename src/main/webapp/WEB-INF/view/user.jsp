@@ -19,8 +19,8 @@
 		<tr><th>メールアドレス</th></tr>
 		<tr><td><c:out value="${email}" /></td></tr>
 	</table>
-	<a href="mypage"><input type="submit" value="マイページへ戻る" /></a>
-	<a href="editUser"><input type="submit" value="会員情報を編集する" /></a>
+	<a href="<%= request.getContextPath() %>/admin/mypage"><input type="submit" value="マイページへ戻る" /></a>
+	<a href="<%= request.getContextPath() %>/admin/editUser"><input type="submit" value="会員情報を編集する" /></a>
 
 </body>
 </html>

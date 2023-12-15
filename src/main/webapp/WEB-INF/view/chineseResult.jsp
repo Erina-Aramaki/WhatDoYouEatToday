@@ -21,8 +21,8 @@
 	
 	<!-- ChineseServletからフォワードで次のサーブレットに遷移させたときに実装する -->
 	<!-- <p><a href=""></a>中華料理 選択画面へ戻る</p> -->
-	<p><a href="map">マップを表示する</a></p>
-	<p><a href="genre">もう一度診断する</a></p>
-	<p><a href="mypage">マイページへ戻る</a></p>
+	<p><a href="<%= request.getContextPath() %>/admin/map">マップを表示する</a></p>
+	<p><a href="<%= request.getContextPath() %>/admin/genre">もう一度診断する</a></p>
+	<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
 </body>
 </html>

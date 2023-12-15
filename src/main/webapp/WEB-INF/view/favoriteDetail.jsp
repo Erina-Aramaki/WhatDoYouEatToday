@@ -29,7 +29,7 @@
 			<input type="submit" name="removeFavorite" value="お気に入りから外す"  />
 		</form>
 		
-		<p><a href="favorite">お気に入りに戻る</a></p>
+		<p><a href="<%= request.getContextPath() %>/admin/favorite">お気に入りに戻る</a></p>
 		
 		<%-- <p><img src="<%= request.getContextPath() %>/upload/${num}.png" width="412" alt="${foodName }の画像" /></p> --%>
 		<p><img src="<%= request.getContextPath() %>/upload/${foodName}.png" width="412" alt="${ foodName}の画像" /></p>
@@ -51,8 +51,8 @@
  			</c:forEach>
  		</ol> 
  		
-		<p><a href="mypage">マイページへ戻る</a></p>
-		<p><a href="select">今日なに食べる？トップへ戻る</a></p>
+		<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+		<p><a href="<%= request.getContextPath() %>/admin/select">今日なに食べる？トップへ戻る</a></p>
 	<%-- </c:forEach> --%>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../js/favorite.js"></script> -->

@@ -9,6 +9,6 @@
 </head>
 <body>
 	<h1>ログアウトしました</h1>
-	<p><a href="login">ログイン画面に戻る</a></p>
+	<p><a href="<%= request.getContextPath() %>/login">ログイン画面に戻る</a></p>
 </body>
 </html>

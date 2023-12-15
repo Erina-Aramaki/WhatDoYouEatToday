@@ -15,6 +15,6 @@
 		<p>パスワード：<input type="password" name="loginPass" placeholder="パスワード" /></p>
 		<p><input type="submit" value="ログイン" /></p>
 	</form>
-	<p><a href="register">会員登録はこちら</a></p> 
+	<p><a href="<%= request.getContextPath() %>/register">会員登録はこちら</a></p> 
 </body>
 </html>

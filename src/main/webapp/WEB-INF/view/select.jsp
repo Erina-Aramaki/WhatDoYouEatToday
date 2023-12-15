@@ -15,6 +15,6 @@
 	
 	<p>料理一覧は<a href="food">こちら</a></p>
 	
-	<p><a href="mypage">マイページへ戻る</a></p>
+	<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
 </body>
 </html>

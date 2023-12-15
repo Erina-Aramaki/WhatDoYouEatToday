@@ -32,7 +32,7 @@
 		</ul>
 
 	<p>
-		<a href="mypage">マイページへ戻る</a>
+		<a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a>
 	</p>
 </body>
 </html>
