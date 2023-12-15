@@ -25,7 +25,7 @@ public class MyPageServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		Admin admin = (Admin)session.getAttribute("admin");
-		request.setAttribute("name", session.getAttribute("name"));
+		request.setAttribute("name", admin.getName());
 		System.out.println("MyPageServlet1：" + admin.getName());
 		
 		request.getRequestDispatcher("/WEB-INF/view/mypage.jsp").forward(request, response);

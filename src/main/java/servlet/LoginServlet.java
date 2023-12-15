@@ -55,15 +55,17 @@ public class LoginServlet extends HttpServlet {
 			//エラーメッセージ、JSTLで後ほど実装
 			
 			request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
+			return;
 		}
 
 		HttpSession session = request.getSession();
 		session.setAttribute("admin", admin);
 		
-		session.setAttribute("name", admin.getName());
-		session.setAttribute("loginId", admin.getLoginId());
-		session.setAttribute("loginPass", admin.getLoginPass());
-		session.setAttribute("email", admin.getEmail());
+		//不要 
+//		session.setAttribute("name", admin.getName());
+//		session.setAttribute("loginId", admin.getLoginId());
+//		session.setAttribute("loginPass", admin.getLoginPass());
+//		session.setAttribute("email", admin.getEmail());
 		
 		response.sendRedirect(request.getContextPath() + "/admin/mypage");
 		return;
