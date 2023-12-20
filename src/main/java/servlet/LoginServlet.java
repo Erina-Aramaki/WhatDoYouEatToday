@@ -62,10 +62,10 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("admin", admin);
 		
 		//不要 
-//		session.setAttribute("name", admin.getName());
-//		session.setAttribute("loginId", admin.getLoginId());
-//		session.setAttribute("loginPass", admin.getLoginPass());
-//		session.setAttribute("email", admin.getEmail());
+		session.setAttribute("name", admin.getName());
+		session.setAttribute("loginId", admin.getLoginId());
+		session.setAttribute("loginPass", admin.getLoginPass());
+		session.setAttribute("email", admin.getEmail());
 		
 		response.sendRedirect(request.getContextPath() + "/admin/mypage");
 		return;

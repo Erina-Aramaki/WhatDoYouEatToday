@@ -27,18 +27,18 @@ public class EditUserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-//		request.setAttribute("name", session.getAttribute("name"));
-//		request.setAttribute("email", session.getAttribute("email"));
-//		request.setAttribute("loginId", session.getAttribute("loginId"));
-//		request.setAttribute("loginPass", session.getAttribute("loginPass"));
-		Admin admin = (Admin)session.getAttribute("admin");
-		request.setAttribute("name", admin.getName());
-		request.setAttribute("email", admin.getEmail());
-		request.setAttribute("loginId", admin.getLoginId());
-		request.setAttribute("loginPass", admin.getLoginPass());
+		request.setAttribute("name", session.getAttribute("name"));
+		request.setAttribute("email", session.getAttribute("email"));
+		request.setAttribute("loginId", session.getAttribute("loginId"));
+		request.setAttribute("loginPass", session.getAttribute("loginPass"));
+//		Admin admin = (Admin)session.getAttribute("admin");
+//		request.setAttribute("name", admin.getName());
+//		request.setAttribute("email", admin.getEmail());
+//		request.setAttribute("loginId", admin.getLoginId());
+//		request.setAttribute("loginPass", admin.getLoginPass());
 		
-//		loginId = (String) session.getAttribute("loginId");
-		loginId = (String) admin.getLoginId();
+		loginId = (String) session.getAttribute("loginId");
+//		loginId = (String) admin.getLoginId();
 		request.getRequestDispatcher("/WEB-INF/view/editUser.jsp").forward(request, response);
 	}
 
@@ -54,10 +54,11 @@ public class EditUserServlet extends HttpServlet {
 		
 		try {
 			AdminDao dao = DaoFactory.createAdminDao();
-			Admin admin = dao.update(new Admin(null, loginId, loginPass, email, name));
+			dao.update(new Admin(null, loginId, loginPass, email, name));
+//			Admin admin = dao.update(new Admin(null, loginId, loginPass, email, name));
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("admin", admin);
+//			session.setAttribute("admin", admin);
 			session.setAttribute("name", name);
 			session.setAttribute("email", email);
 			session.setAttribute("loginPass", loginPass); //BCrypt.hashpw、BCrypt.checkpwを確認する
