@@ -1,8 +1,69 @@
 @charset "utf-8";
 
+/* リセットCSS */
+body, p, h1, h2, h3, h4, h5, h6, figure, ul, ol, dl, dd {
+    padding: 0;
+    margin: 0;
+/*     list-style: none; */
+}
+
+img {
+vertical-align: bottom;
+}
+
+.flex {
+display: flex;
+justify-content: space-between;
+}
+
+.inner {
+width: 1000px;
+margin: 0 auto;
+}
+
+a, textarea, input, select, button {
+outline: none;
+}
+
+header a {
+text-decoration: none;
+color: #666;
+}
+
+header li a {
+display: block;
+text-align: center;
+padding: 14px 16px;
+}
+    
+header li a:hover {
+background-color: white;
+}
+
+
+
+
+
+
 body {
     width: 1080px;
 	margin: 100px auto;
     background-color: pink;
     text-align: center;
+    line-height: 2;
+    list-style-position: inside;
 }
+
+table {
+   	margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+	list-style:none;
+	width: 1000px;
+	text-align: start;
+	margin-left: 480px;
+}
+
+
