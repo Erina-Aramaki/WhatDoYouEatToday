@@ -5,10 +5,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" />
 <title>会員情報 | 今日なに食べる？</title>
 </head>
 <body>
 	<h1>会員情報</h1>
+
 	<table border="1">
 		<tr><th>お名前</th></tr>
 		<tr><td><c:out value="${name}" /></td></tr>
@@ -19,6 +21,7 @@
 		<tr><th>メールアドレス</th></tr>
 		<tr><td><c:out value="${email}" /></td></tr>
 	</table>
+
 	<a href="<%= request.getContextPath() %>/admin/mypage"><input type="submit" value="マイページへ戻る" /></a>
 	<a href="<%= request.getContextPath() %>/admin/editUser"><input type="submit" value="会員情報を編集する" /></a>
 

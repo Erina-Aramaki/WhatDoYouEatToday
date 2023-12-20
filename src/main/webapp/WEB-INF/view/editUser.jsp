@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" />
 <title>会員情報 | 今日なに食べる？</title>
 </head>
 <body>

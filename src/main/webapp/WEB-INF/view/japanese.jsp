@@ -5,6 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" />
 <title>和食のオススメ料理 | 今日なに食べる？</title>
 </head>
 <body>
