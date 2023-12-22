@@ -17,7 +17,7 @@
 	<form action="" method="post">
 <!-- 		<form action="" method="get"> -->
 		<span class="favoritedmark fade">★</span>
-		<input type="submit" name="addToFavorite" value="お気に入りに登録"  />
+		<input type="submit" name="addToFavorite" value="お気に入りに登録" id="addToFavorite"  />
 		<input type="submit" name="removeFavorite" value="お気に入りから外す"  />
 		<p><a href="favorite">お気に入りに戻る</a></p>
 
@@ -53,6 +53,11 @@
 
 	<p><a href="mypage">マイページへ戻る</a></p>
 	<p><a href="select">今日なに食べる？トップへ戻る</a></p> 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/script.js"></script>
+
 
 </body>
 </html>

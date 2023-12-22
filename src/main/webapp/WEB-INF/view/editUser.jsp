@@ -23,8 +23,11 @@
 			<tr><th>メールアドレス</th></tr>
 			<tr><td><input type="text" value="<c:out value="${email}" />" name="email" /></td></tr>
 		</table>
-		<input type="submit" value="編集完了する" />
+		<input id="completion" type="submit" value="編集完了する" />
 	</form>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/script.js"></script>
 
 </body>
 </html>
