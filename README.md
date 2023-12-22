@@ -58,8 +58,9 @@
   Factoryパターンを使用することでクラス同士の依存度を低くし、システム全体の柔軟性とメンテナンス性を向上させた           
   また、ファクトリクラスを用いてオブジェクト生成のロジックを集約させ、他の部分で再利用できるようにした          
   上記により、生成ロジックを繰り返し記述する手間を省くことができた          
-  ↓Factoryパターンに基づいて作成したファイル一覧             
-  ![factory](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/71f595b8-9f91-4795-9cbc-6270abba5c45)
+  ↓Factoryパターン概念図      
+![概念図](https://github.com/Erina-Aramaki/WhatDoYouEatToday/assets/75921588/ce919e65-567f-42fa-9859-2d6a582eabd6)
+
 
 ## 苦労した点
 1. 複雑なSQL文          
