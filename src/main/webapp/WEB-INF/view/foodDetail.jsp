@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/foodDetail.css" />
 <title>レシピ | 今日なに食べる？</title>
 </head>
 <body>
@@ -23,25 +24,28 @@
 <!-- form外から移動　開始位置 -->
 			<input type="hidden" value="<c:out value="${num}" />" name="num" > 
 			<input type="hidden" value="<c:out value="${foodName}" />" name="foodName"  /> 
-			<p><img src="<%= request.getContextPath() %>/upload/${num}.png" width="412" alt="${num }${ foodName}の画像" /></p>
+			<p><img src="<%= request.getContextPath() %>/upload/${foodName}.png" width="412" alt="${num }${ foodName}の画像" /></p>
 		
-		<h3>材料</h3>
+		<div class="flex">		
+			<div class="item">
+			<h3>材料</h3>
+				 <ul>
+					<c:forEach items="${Foods_material}" var="material" varStatus="vs">		
+						<li>${material.material }</li>
+					</c:forEach>
+				</ul>
+			</div>
+			<div class="item">
+				<h3>作り方</h3>
+		 		 <ol>
+		 			<c:forEach items="${Foods_howToMake}" var="howToMake" varStatus="vs">
+		 				<li>${howToMake.howToMake }</li>
+		 			</c:forEach>
+		 		</ol> 
+			</div>
+			
 		
-		 <ul>
-			<c:forEach items="${Foods_material}" var="material" varStatus="vs">		
-				<li>${material.material }</li>
-			</c:forEach>
-		</ul>
-		
-	
-		<h3>作り方</h3>
-
- 		 <ol>
- 			<c:forEach items="${Foods_howToMake}" var="howToMake" varStatus="vs">
- 				<li>${howToMake.howToMake }</li>
- 			</c:forEach>
- 		</ol> 
-
+		</div>
 		
 <!-- form外から移動　修了位置 -->
 	</form>

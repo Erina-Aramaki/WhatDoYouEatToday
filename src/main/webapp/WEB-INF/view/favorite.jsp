@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/favorite.css" />
 <title>お気に入り | 今日なに食べる？</title>
 </head>
 <body>

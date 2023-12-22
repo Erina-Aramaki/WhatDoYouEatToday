@@ -59,11 +59,16 @@ table {
     margin-right: auto;
 }
 
-ul {
-	list-style:none;
-	width: 1000px;
-	text-align: start;
-	margin-left: 480px;
-}
+/* ul { */
+/* 	list-style:none; */
+/* 	width: 1000px; */
+/* 	text-align: start; */
+/* 	margin-left: 480px; */
+/* } */
+
+/* ol { */
+/*     text-align: start; */
+/* 	margin-left: 300px; */
+/* } */
 
 

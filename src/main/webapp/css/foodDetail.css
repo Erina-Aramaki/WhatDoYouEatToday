@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.flex {
+	width: 1000px;
+}
+
+.item {
+	width: 50%;
+	border-top: solid #5d627b 5px;
+	background: rgba(255, 255, 255, 0.863);
+	margin: 10px;
+	padding: 10px 30px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+ul {
+/* 	list-style:none; */
+	width: 450px;
+	text-align: start;
+/* 	margin-left: 480px; */
+}
+
+ol {
+	width: 450px;
+    text-align: start;
+/* 	margin-left: 300px; */
+}
+
+li {
+	width: 100%;
+}
