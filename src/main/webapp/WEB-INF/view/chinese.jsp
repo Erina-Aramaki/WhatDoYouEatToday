@@ -9,18 +9,38 @@
 <title>中華のオススメ料理 | 今日なに食べる？</title>
 </head>
 <body>
-	<h1>中華のオススメ料理</h1>
-	<p>食べたいものを選択してね！</p>
+
+	<header>
+	  <div class="flex">
+	    <h1><a href="<%= request.getContextPath() %>/admin/mypage">What do you eat today?</a></h1>
+	    <nav>
+	      <ul class="flex">
+	        <li><a href="<%= request.getContextPath() %>/admin/mypage">Mypage</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/select">Diagnosis</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/favorite">favorites</a></li>
+	      </ul>
+	    </nav>
+	  </div> 
+	</header>
 	
-	<form action="" method="post">
-		<input type="submit" name="1" value="米" />
-		<input type="submit" name="2" value="麺" />
-		<input type="submit" name="3" value="肉" />
-		<input type="submit" name="4" value="魚" />
-		<input type="submit" name="5" value="軽食" />
-	</form>
+	<main>
+		<h2>中華のオススメ料理</h2>
+		<p>食べたいものを選択してね！</p>
+		
+		<form action="" method="post">
+			<input type="submit" name="1" value="米" />
+			<input type="submit" name="2" value="麺" />
+			<input type="submit" name="3" value="肉" />
+			<input type="submit" name="4" value="魚" />
+			<input type="submit" name="5" value="軽食" />
+		</form>
+		
+		<p><a href="<%= request.getContextPath() %>/admin/select">今日なに食べる？トップへ戻る</a></p>
+		<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+	</main>
 	
-	<p><a href="<%= request.getContextPath() %>/admin/select">今日なに食べる？トップへ戻る</a></p>
-	<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+	<footer>
+    	<p><small>Copyright &copy; 2023 Erina Aramaki rights reserved.</small></p>
+  	</footer>
 </body>
 </html>

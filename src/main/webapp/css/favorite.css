@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-ul {
+main ul {
 	list-style:none;
 	width: 1000px;
 	text-align: start;

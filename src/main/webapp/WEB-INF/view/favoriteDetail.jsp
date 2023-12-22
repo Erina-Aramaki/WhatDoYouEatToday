@@ -10,9 +10,22 @@
 <!-- 使わないため消す -->
 </head>
 <body>
-	<%-- <c:forEach items="${foods}" var="food" varStatus="vs"> --%>
-		
-		<h1 class="page-title">${foodName }</h1>
+
+	<header>
+	  <div class="flex">
+	    <h1><a href="<%= request.getContextPath() %>/admin/mypage">What do you eat today?</a></h1>
+	    <nav>
+	      <ul class="flex">
+	        <li><a href="<%= request.getContextPath() %>/admin/mypage">Mypage</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/select">Diagnosis</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/favorite">favorites</a></li>
+	      </ul>
+	    </nav>
+	  </div> 
+	</header>
+	
+	<main>
+		<h2 class="page-title">${foodName }</h2>
 		
 		<!-- お気に入りボタン -->
 		<!-- <form action="" method="post"> -->
@@ -54,7 +67,11 @@
  		
 		<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
 		<p><a href="<%= request.getContextPath() %>/admin/select">今日なに食べる？トップへ戻る</a></p>
-	<%-- </c:forEach> --%>
+	</main>	
+	
+	<footer>
+    	<p><small>Copyright &copy; 2023 Erina Aramaki rights reserved.</small></p>
+  	</footer>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../js/favorite.js"></script> -->
 

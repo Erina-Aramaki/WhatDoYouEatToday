@@ -9,13 +9,33 @@
 <title>会員専用 | 今日なに食べる？</title>
 </head>
 <body>
-	<h1>会員ページ</h1>
-	<p><c:out value="${name} さん、マイページへようこそ！" /></p>
+
+	<header>
+	  <div class="flex">
+	    <h1><a href="<%= request.getContextPath() %>/admin/mypage">What do you eat today?</a></h1>
+	    <nav>
+	      <ul class="flex">
+	        <li><a href="<%= request.getContextPath() %>/admin/select">Diagnosis</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/favorite">favorites</a></li>
+	      </ul>
+	    </nav>
+	  </div> 
+	</header>
 	
-	<p><a href="select">◆今日なに食べる？診断</a></p>
-	<p><a href="favorite">◆お気に入り</a></p>
-	<p><a href="user">◆会員情報</a></p>
+	<main>
+		<h2>会員ページ</h2>
+		<p><c:out value="${name} さん、マイページへようこそ！" /></p>
+		
+		<p><a href="<%= request.getContextPath() %>/admin/select">◆今日なに食べる？診断</a></p>
+		<p><a href="<%= request.getContextPath() %>/admin/favorite">◆お気に入り</a></p>
+		<p><a href="<%= request.getContextPath() %>/admin/user">◆会員情報</a></p>
+		
+		<p><a href="<%= request.getContextPath() %>/logout">ログアウト</a></p>
+	</main>
 	
-	<p><a href="<%= request.getContextPath() %>/logout">ログアウト</a></p>
+	<footer>
+    	<p><small>Copyright &copy; 2023 Erina Aramaki rights reserved.</small></p>
+  	</footer>
+  
 </body>
 </html>

@@ -9,12 +9,32 @@
 <title>今日なに食べる？ | 今日なに食べる？</title>
 </head>
 <body>
-	<h1>今日なに食べる？</h1>
-	<p>今日のご飯を決めるお手伝いをするよ！</p>
-	<a href="genre"><input type="submit" value="診断スタート" /></a>
+
+	<header>
+	  <div class="flex">
+	    <h1><a href="<%= request.getContextPath() %>/admin/mypage">What do you eat today?</a></h1>
+	    <nav>
+	      <ul class="flex">
+	        <li><a href="<%= request.getContextPath() %>/admin/mypage">Mypage</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/select">Diagnosis</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/favorite">favorites</a></li>
+	      </ul>
+	    </nav>
+	  </div> 
+	</header>
 	
-	<p>料理一覧は<a href="food">こちら</a></p>
+	<main>
+		<h2>今日なに食べる？</h2>
+		<p>今日のご飯を決めるお手伝いをするよ！</p>
+		<a href="genre"><input type="submit" value="診断スタート" /></a>
+		
+		<p>料理一覧は<a href="food">こちら</a></p>
+		
+		<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+	</main>
 	
-	<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+	<footer>
+    	<p><small>Copyright &copy; 2023 Erina Aramaki rights reserved.</small></p>
+  	</footer>
 </body>
 </html>
