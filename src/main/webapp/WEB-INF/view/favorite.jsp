@@ -48,9 +48,9 @@
 				</c:forEach>
 			</ul>
 	
-		<p>
-			<a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a>
-		</p>
+		<div class="link">
+			<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+		</div>
 	</main>
 	
 	<footer>

@@ -65,8 +65,10 @@
  			</c:forEach>
  		</ol> 
  		
-		<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
-		<p><a href="<%= request.getContextPath() %>/admin/select">今日なに食べる？トップへ戻る</a></p>
+ 		<div class="link">
+			<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>
+			<p><a href="<%= request.getContextPath() %>/admin/select">今日なに食べる？トップへ戻る</a></p>
+		</div>
 	</main>	
 	
 	<footer>

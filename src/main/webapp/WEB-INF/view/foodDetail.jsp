@@ -64,9 +64,10 @@
 	<!-- form外から移動　修了位置 -->
 		</form>
 		
-	
-		<p><a href="mypage">マイページへ戻る</a></p>
-		<p><a href="select">今日なに食べる？トップへ戻る</a></p> 
+		<div class="link">
+			<p><a href="mypage">マイページへ戻る</a></p>
+			<p><a href="select">今日なに食べる？トップへ戻る</a></p> 
+		</div>
 	</main>	
 
 	<footer>

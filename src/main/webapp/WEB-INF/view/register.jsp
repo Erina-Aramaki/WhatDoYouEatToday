@@ -33,7 +33,9 @@
 			<p><input type="submit" value="登録" /></p>
 		</form>
 		
-		<p><a href="<%= request.getContextPath() %>/login">ログインはこちら</a></p>
+		<div class="link">
+			<p><a href="<%= request.getContextPath() %>/login">ログインはこちら</a></p>
+		</div>
 	</main>
 	
 	<footer>

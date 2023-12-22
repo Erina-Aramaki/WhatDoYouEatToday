@@ -26,11 +26,15 @@
 		<h2>会員ページ</h2>
 		<p><c:out value="${name} さん、マイページへようこそ！" /></p>
 		
-		<p><a href="<%= request.getContextPath() %>/admin/select">◆今日なに食べる？診断</a></p>
-		<p><a href="<%= request.getContextPath() %>/admin/favorite">◆お気に入り</a></p>
-		<p><a href="<%= request.getContextPath() %>/admin/user">◆会員情報</a></p>
+		<div class="start">
+			<p><a href="<%= request.getContextPath() %>/admin/select">◆今日なに食べる？診断</a></p>
+			<p><a href="<%= request.getContextPath() %>/admin/favorite">◆お気に入り</a></p>
+			<p><a href="<%= request.getContextPath() %>/admin/user">◆会員情報</a></p>
+		</div>
 		
-		<p><a href="<%= request.getContextPath() %>/logout">ログアウト</a></p>
+		<div class="link">
+			<p><a href="<%= request.getContextPath() %>/logout">ログアウト</a></p>
+		</div>
 	</main>
 	
 	<footer>

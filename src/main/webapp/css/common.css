@@ -69,9 +69,24 @@ main {
     list-style-position: inside;
 }
 
+main input {
+	margin: 20px;
+	padding: 20px 30px;
+}
+
+
+.start {
+	text-align: start;
+	margin-left: 450px;
+}
+
 table {
    	margin-left: auto;
     margin-right: auto;
+}
+
+.link {
+	margin-top: 30px;
 }
 
 footer {

@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/user.css" />
 <title>会員情報 | 今日なに食べる？</title>
 </head>
 <body>
@@ -37,8 +38,10 @@
 			<tr><td><c:out value="${email}" /></td></tr>
 		</table>
 	
-		<a href="<%= request.getContextPath() %>/admin/mypage"><input type="submit" value="マイページへ戻る" /></a>
-		<a href="<%= request.getContextPath() %>/admin/editUser"><input type="submit" value="会員情報を編集する" /></a>
+		<div class="link">
+			<a href="<%= request.getContextPath() %>/admin/mypage"><input type="submit" value="マイページへ戻る" /></a>
+			<a href="<%= request.getContextPath() %>/admin/editUser"><input type="submit" value="会員情報を編集する" /></a>
+		</div>
 	</main>
 
 	<footer>
