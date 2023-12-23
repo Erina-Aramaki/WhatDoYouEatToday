@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-.flex {
-	width: 1000px;
-}
+/*.flex {*/
+/*	width: 1000px;*/
+/*}*/
 
 .item {
 	width: 50%;
@@ -14,16 +14,13 @@
 }
 
 ul {
-/* 	list-style:none; */
 	width: 450px;
 	text-align: start;
-/* 	margin-left: 480px; */
 }
 
 ol {
 	width: 450px;
     text-align: start;
-/* 	margin-left: 300px; */
 }
 
 li {

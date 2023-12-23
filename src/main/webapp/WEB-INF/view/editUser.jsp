@@ -38,7 +38,9 @@
 				<tr><th>メールアドレス</th></tr>
 				<tr><td><input type="text" value="<c:out value="${email}" />" name="email" /></td></tr>
 			</table>
-			<input id="completion" type="submit" value="編集完了する" />
+			<div class="link">
+				<input id="completion" type="submit" value="編集完了する" />
+			</div>
 		</form>
 	</main>
 	

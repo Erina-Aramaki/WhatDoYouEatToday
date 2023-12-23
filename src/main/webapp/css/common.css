@@ -69,10 +69,10 @@ main {
     list-style-position: inside;
 }
 
-main input {
-	margin: 20px;
-	padding: 20px 30px;
-}
+/*main input {*/
+/*	margin: 20px;*/
+/*	padding: 20px 30px;*/
+/*}*/
 
 
 .start {
@@ -81,6 +81,7 @@ main input {
 }
 
 table {
+	width: 400px;
    	margin-left: auto;
     margin-right: auto;
 }
