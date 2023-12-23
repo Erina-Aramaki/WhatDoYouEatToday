@@ -36,6 +36,10 @@ a, textarea, input, select, button {
 outline: none;
 }
 
+header h1 {
+	color: #666;
+}
+
 header a {
 text-decoration: none;
 color: #666;
