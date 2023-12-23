@@ -5,3 +5,22 @@ main input {
 	margin: 20px;
 	padding: 20px 30px;
 }
+
+.button {
+	font-weight: bold;
+	color: rgb(255, 163, 179);
+	background-color: mintcream;
+	border: 1px solid pink;
+	font-size: 18px;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 3px 3px 1px lightpink;
+/*	transition: .3s;*/
+}
+
+.button:hover {
+	box-shadow: none;
+	background-color: pink;
+	color: white;
+	
+}

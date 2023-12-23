@@ -27,9 +27,9 @@
 	<main>
 		<h2>今日なに食べる？</h2>
 		<p>食べたいジャンルを選択してね！</p>
-		<a href="japanese"><input type="submit" value="和食料理" /></a>
-		<a href="chinese"><input type="submit" value="中華料理" /></a>
-		<a href="western"><input type="submit" value="西洋料理" /></a>
+		<a href="japanese"><input type="submit" value="和食料理" class="button" /></a>
+		<a href="chinese"><input type="submit" value="中華料理" class="button" /></a>
+		<a href="western"><input type="submit" value="西洋料理" class="button" /></a>
 		
 		<div class="link">
 			<p><a href="<%= request.getContextPath() %>/admin/mypage">マイページへ戻る</a></p>

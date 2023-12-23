@@ -27,7 +27,7 @@
 	<main>
 		<h2>今日なに食べる？</h2>
 		<p>今日のご飯を決めるお手伝いをするよ！</p>
-		<a href="genre"><input type="submit" value="診断スタート" /></a>
+		<a href="genre"><input type="submit" value="診断スタート" class="button" /></a>
 		
 		<p>料理一覧は<a href="food">こちら</a></p>
 		
