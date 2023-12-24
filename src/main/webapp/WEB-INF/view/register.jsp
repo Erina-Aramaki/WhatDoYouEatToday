@@ -30,7 +30,7 @@
 			<p>ログインID：<input type="text" name="loginId" placeholder="ログインID" /></p>
 			<p><small>※登録完了後、ログインIDは変更できません</small></p>
 			<p>パスワード：<input type="password" name="loginPass" placeholder="パスワード" /></p>
-			<p><input type="submit" value="登録" /></p>
+			<p><input type="submit" value="登録" id="register"/></p>
 		</form>
 		
 		<div class="link">
@@ -41,5 +41,10 @@
 	<footer>
     	<p><small>Copyright &copy; 2023 Erina Aramaki rights reserved.</small></p>
   	</footer>
+  	
+  	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/script.js"></script>
+
 </body>
 </html>

@@ -6,3 +6,7 @@ $('#completion').click(function(){
 $('#addToFavorite').click(function(){
 	alert('お気に入りに登録しました');
 })
+
+$('#register').click(function(){
+	alert('会員登録しました');
+});
