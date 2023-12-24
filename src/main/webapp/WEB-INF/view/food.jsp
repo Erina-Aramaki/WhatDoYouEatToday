@@ -18,7 +18,7 @@
 	      <ul class="flex">
 	        <li><a href="<%= request.getContextPath() %>/admin/mypage">Mypage</a></li>
 	        <li><a href="<%= request.getContextPath() %>/admin/select">Diagnosis</a></li>
-	        <li><a href="<%= request.getContextPath() %>/admin/favorite">favorites</a></li>
+	        <li><a href="<%= request.getContextPath() %>/admin/favorite">Favorites</a></li>
 	      </ul>
 	    </nav>
 	  </div> 
