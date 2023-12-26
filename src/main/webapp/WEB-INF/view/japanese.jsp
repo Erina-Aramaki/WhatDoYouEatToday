@@ -29,11 +29,11 @@
 		<p>食べたいものを選択してね！</p>
 		
 		<form action="" method="post">
-			<input type="submit" name="1" value="米" />
-			<input type="submit" name="2" value="麺" />
-			<input type="submit" name="3" value="肉" />
-			<input type="submit" name="4" value="魚" />
-			<input type="submit" name="5" value="軽食" />
+			<input type="submit" name="1" value="米" class="button" />
+			<input type="submit" name="2" value="麺" class="button" />
+			<input type="submit" name="3" value="肉" class="button" />
+			<input type="submit" name="4" value="魚" class="button" />
+			<input type="submit" name="5" value="軽食" class="button" />
 		</form>
 		
 		<div class="link">
