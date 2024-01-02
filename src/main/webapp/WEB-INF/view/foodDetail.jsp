@@ -29,7 +29,6 @@
 		
 		<!-- お気に入りボタン -->
 		<form action="" method="post">
-	<!-- 		<form action="" method="get"> -->
 			<span class="favoritedmark fade">★</span>
 			<input type="submit" name="addToFavorite" value="お気に入りに登録" id="addToFavorite"  />
 			<input type="submit" name="removeFavorite" value="お気に入りから外す"  />
@@ -61,7 +60,7 @@
 			
 			</div>
 			
-	<!-- form外から移動　修了位置 -->
+	<!-- form外から移動　終了位置 -->
 		</form>
 		
 		<div class="link">

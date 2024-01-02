@@ -112,38 +112,6 @@ public class JapaneseDaoImpl implements JapaneseDao{
 		}
 		return null;
 	}
-		
-//	public List<Japanese> select() throws Exception {
-//		
-//		Random r = new Random();
-//		int random = r.nextInt(4)+1;
-////		double d;
-////		d = (int)Math.random()*10;
-//		System.out.println("random" + random);
-//		
-//		int id = random;
-//		
-//		try(Connection con = ds.getConnection()){
-//			//SQL文
-//			String sql = "SELECT * FROM japanese_food WHERE id = ?";
-//			//SQLを準備
-//			PreparedStatement stmt = con.prepareStatement(sql);
-//			//SQLを実行
-//			stmt.setInt(1, id);
-//			ResultSet rs = stmt.executeQuery();
-//			System.out.println("rs"+rs);
-//			//変換
-//			if(rs.next()) {
-//				Japanese japaneseFood = mapToFood(rs);
-//				japaneseFoods.add(japaneseFood);
-//				System.out.println("japaneseDaoImpl："+ japaneseFoods);
-//			}
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//		return japaneseFoods;
-//	}
 	
 	@Override
 	public List<Japanese> detailFood() throws Exception {

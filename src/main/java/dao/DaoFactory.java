@@ -39,7 +39,6 @@ public class DaoFactory {
 			ctx = new InitialContext();
 			ds = (DataSource)ctx.lookup("java:comp/env/my_project");
 		} catch (Exception e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} finally {
 			try {

@@ -29,20 +29,12 @@ public class FoodServlet extends HttpServlet {
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			List<Food> foods = dao.findAll();
-//			List<Food> material
-//			List<Food> howToMake = dao.howToMake(foods);
+
 			
-//			request.setAttribute("foods", foods);
+
 			HttpSession session = request.getSession();
 			session.setAttribute("foods", foods);
 			System.out.println("FoodServlet_foods："+ foods);
-			
-//			session.setAttribute("material", material);
-//			System.out.println("FoodServlet_material："+ material);
-//			
-//			session.setAttribute("howToMake", howToMake);
-//			System.out.println("FoodServlet_howToMake："+ howToMake);
-			
 			
 			//URLバリデーション
 			

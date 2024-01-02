@@ -26,28 +26,13 @@ public class FavoriteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//FoodDetailServletで設定したsessionからnum、numをgetする→DBから取得するから不要？？
-//		HttpSession session = request.getSession();
-//		request.setAttribute("num", session.getAttribute("foodNum"));
-//		request.setAttribute("foodName", session.getAttribute("foodName"));
-		
-		
-//		DBから取得する　→参照するだけだからcheckFavorite()の引数不要？
-//		HttpSession session = request.getSession();
-//		String loginId = (String) session.getAttribute("loginId");
-//		String name = (String) session.getAttribute("name");
-
-//		Food food = new Food();
-		
+			
 		
 		HttpSession session = request.getSession();
 		String loginId = (String) session.getAttribute("loginId");
 		try {
 			FoodDao dao = DaoFactory.createFoodDao();
 			
-			//重複チェック
-//			dao.checkDuplicate();
 			
 			List<Food> foods = dao.checkFavorite(loginId);
 			request.setAttribute("foods", foods);
@@ -63,12 +48,6 @@ public class FavoriteServlet extends HttpServlet {
 		}
 		
 		
-//		request.setAttribute("num", food.getNum());
-//		request.setAttribute("foodName", food.getName());
-		
-//		System.out.println("FavoriteServlet_food.getNum()=" + food.getNum());
-		
-		
 		request.getRequestDispatcher("/WEB-INF/view/favorite.jsp").forward(request, response);
 	}
 
@@ -77,25 +56,6 @@ public class FavoriteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//FoodDetailServletで設定したsessionからnum、foodName、material、sourceをgetする→DBから取得するから不要？？
-//		HttpSession session = request.getSession();
-//		request.setAttribute("num", session.getAttribute("foodNum"));
-//		request.setAttribute("foodName", session.getAttribute("foodName"));
-//		request.setAttribute("material", session.getAttribute("material"));
-//		request.setAttribute("source", session.getAttribute("source"));
-		
-
-		
-//		if(request.getParameter("num") = null) {
-//			HttpSession session = request.getSession();
-//			String loginId = (String) session.getAttribute("loginId");
-//			FoodDao dao = DaoFactory.createFoodDao();
-//			List<Food> foods = dao.checkFavorite(loginId);
-//			System.out.println(foods.get(1).getId());
-//		}
-		
-		
-//		DBから取得する
 		System.out.println("FavoriteServlet：request.getParameter(\"num\")=" + request.getParameter("num"));
 		int num = Integer.parseInt(request.getParameter("num"));
 		String foodName = request.getParameter("foodName");
@@ -128,8 +88,7 @@ public class FavoriteServlet extends HttpServlet {
 		
 		
 		request.getRequestDispatcher("/WEB-INF/view/foodDetail.jsp").forward(request, response);
-//		response.sendRedirect(request.getContextPath() + "/admin/foodDetail");
-//		return;
+
 	}
 
 }

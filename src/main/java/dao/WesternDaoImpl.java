@@ -93,12 +93,6 @@ public class WesternDaoImpl implements WesternDao{
 		}
 		return null;
 	}
-
-//	@Override
-//	public List<Western> detailFood() throws Exception {
-//		// TODO 自動生成されたメソッド・スタブ
-//		return null;
-//	}
 	
 	public Western mapToFood(ResultSet rs) throws SQLException {
 		Western westernFood = Western.builder()

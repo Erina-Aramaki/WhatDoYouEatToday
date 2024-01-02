@@ -25,21 +25,6 @@ public class JapaneseServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.getRequestDispatcher("/WEB-INF/view/japanese.jsp").forward(request, response);
-		
-//		JapaneseDao dao = DaoFactory.createJapaneseDao();
-//		try {
-//			List<Japanese> japanese = dao.select();
-//			
-//			System.out.println("japaneseServlet"+japanese.get(0));
-//			
-//			request.setAttribute("japanese", japanese);
-//
-//			
-//		request.getRequestDispatcher("/WEB-INF/view/japanese.jsp").forward(request, response);
-//		
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
 	}
 
 	/**

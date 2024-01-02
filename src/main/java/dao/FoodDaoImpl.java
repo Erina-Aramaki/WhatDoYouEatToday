@@ -201,67 +201,13 @@ public class FoodDaoImpl implements FoodDao{
 		
 	}
 	
-	@Override
-	public Food checkDuplicate() throws Exception {
-		try(Connection con = ds.getConnection()){
-			//SQL文
-//			String sql = "DELETE FROM favorite WHERE id AND food_num"
-//					+ " NOT IN (SELECT min_id from (SELECT MIN(id) min_id FROM favorite GROUP BY food_num, food_name) tmp)";
-			//SQL準備
-//			PreparedStatement stmt = con.prepareStatement(sql);
-//			System.out.println("checkDuplicate:stmt=" + stmt);
-			//SQL実行
-//			stmt.executeUpdate();
-			//変換
-//			System.out.println("-------------------------------------------------------------------");
-//			while(rs.next()) {
-//				Food food = mapToCheckFavorite(rs);
-//				System.out.println("FoodDaoImpl_checkDuplicate：food=" + food);
-//				foods.add(food);
-//			}
-//			System.out.println("-------------------------------------------------------------------");
-			
-			//SQL文
-//			String sql = "SELECT * FROM favorite WHERE login_id = ? AND food_num = ?";
-//			//SQL準備
-//			PreparedStatement stmt = con.prepareStatement(sql);
-//			stmt.setString(1, loginId);
-//			stmt.setInt(2, num);
-//			//SQL実行
-//			ResultSet rs = stmt.executeQuery();
-//			//変換
-//			if(rs.next()) {
-//				Food food = mapToCheckFavorite(rs);
-//				if(food == null) {
-//					return food;
-//				}
-//			}
-			
-			
-		} catch (Exception e) {
-			System.out.println("FoodDaoImpl_checkDuplicate：失敗");
-			e.getStackTrace();
-		}
-		return null;
-	}
-	
 
 	@Override
 	public List<Food> checkFavorite(String loginId) throws Exception {
 		try(Connection con = ds.getConnection()){
 			
 			
-			//SQL文
-//			String sql = "SELECT "
-//					+ " food_num AS num, food_name AS name "
-//					+ " FROM( "
-//					+ " SELECT japanese_food.name, japanese_food.staple_id FROM japanese_food "
-//					+ " UNION "
-//					+ " SELECT chinese_food.name, chinese_food.staple_id FROM chinese_food "
-//					+ " UNION "
-//					+ " SELECT western_food.name, western_food.staple_id FROM western_food)AS all_food "
-//					+ " JOIN favorite ON all_food.name = favorite.food_name";
-			
+			//SQL文			
 			String sql = "SELECT * FROM favorite WHERE login_id = ?";
 			//SQL準備
 			PreparedStatement stmt = con.prepareStatement(sql);
@@ -300,7 +246,6 @@ public class FoodDaoImpl implements FoodDao{
 		Food food = Food.builder()
 				.num(rs.getInt("food_num"))
 				.name(rs.getString("food_name"))
-//				.material(rs.getString("material"))
 				.build();
 		return food;
 	}

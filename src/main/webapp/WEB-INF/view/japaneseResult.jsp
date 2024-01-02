@@ -32,11 +32,7 @@
 		<%-- <p><c:out value="${japanese.get(0).name}" /></p> --%>
 	
 		<p><img src="<%= request.getContextPath() %>/upload/${stapleJapanese.name}.png" width="412" alt="${stapleJapanese.name }の画像" /></p>
-		<!-- select(String strId) -->
 		<p><c:out value="${stapleJapanese.name}" /></p>
-		
-		<!-- JapaneseServletからフォワードで次のサーブレットに遷移させたときに実装する -->
-		<!-- <p><a href=""></a>西洋料理 選択画面へ戻る</p> -->
 		
 		<div class="link">
 			<p><a href="<%= request.getContextPath() %>/admin/map">マップを表示する</a></p>

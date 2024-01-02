@@ -30,7 +30,7 @@ public interface FoodDao {
 	void removeFavorite(String loginId, int foodNum) throws Exception;
 	
 //	お気に入りに追加されていたら重複を削除
-	Food checkDuplicate() throws Exception;
+//	Food checkDuplicate() throws Exception;
 	
 //	お気に入り一覧表示
 	List<Food> checkFavorite(String loginId) throws Exception;

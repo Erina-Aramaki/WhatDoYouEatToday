@@ -22,9 +22,6 @@ public class SelectServlet extends HttpServlet {
 
 		request.getRequestDispatcher("/WEB-INF/view/select.jsp").forward(request, response);
 	}
-	
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		request.getRequestDispatcher("/WEB-INF/view/genre.jsp").forward(request, response);
-//	}
+
 
 }
