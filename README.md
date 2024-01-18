@@ -12,7 +12,7 @@
     - CSS
     - JavaScript(jQuery)
 - コード管理
-    - Git
+    - Fork
     - GitHub
 
  ***
